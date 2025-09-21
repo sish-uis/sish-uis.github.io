@@ -1,0 +1,32 @@
+/* base.css */
+input, textarea, select, button {
+  -webkit-transition: all 0.6s linear;
+  transition: all 0.6s linear;
+}
+
+.container_font input,
+.container_font textarea,
+.container_font select,
+.container_font button {
+  font-size: 1.042rem;
+}
+
+a:hover {
+  color: #004884;
+}
+
+.btn.focus, .btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 .2rem transparent !important;
+}
+
+ul.search-results {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.anh-invisible {
+  display: none;
+  height: 0;
+}

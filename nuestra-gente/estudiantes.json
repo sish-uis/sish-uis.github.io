@@ -1,0 +1,145 @@
+[
+  {
+    "nombre": "David Blanco Quiroga",
+    "cargo": "Líder / Presidente",
+    "descripcion": "Biografía",
+    "foto": "thumbs/david_blanco.png",
+    "links": {
+      "email": "david2200709@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002363797",
+      "linkedin": "https://www.linkedin.com/in/david-blanco-quiroga-111a87385"
+    }
+  },
+  {
+    "nombre": "Johan Páez Romero",
+    "cargo": "Vicepresidente",
+    "descripcion": "Biografía",
+    "foto": "thumbs/johan_paez.png",
+    "links": {
+      "email": "johan2210631@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002192389",
+      "linkedin": "https://www.linkedin.com/in/johan-p%C3%A1ez-romero-62b546285/"
+    }
+  },
+  {
+    "nombre": "Juliana Chacón",
+    "cargo": "Secretaria",
+    "descripcion": "Biografía",
+    "foto": "thumbs/juliana_chacon.png",
+    "links": {
+      "email": "maria2230597@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002277361",
+      "linkedin": "#"
+    }
+  },
+  {
+    "nombre": "Juliana Lavacude",
+    "cargo": "Tesorera",
+    "descripcion": "Biografía",
+    "foto": "thumbs/juliana_lavacude.png",
+    "links": {
+      "email": "#",
+      "cvlac": "#",
+      "linkedin": "#"
+    }
+  },
+  {
+    "nombre": "Oscar Esteban Fonseca",
+    "cargo": "Vocal",
+    "descripcion": "Biografía",
+    "foto": "thumbs/oscar_fonseca.png",
+    "links": {
+      "email": "#",
+      "cvlac": "#",
+      "linkedin": "#"
+    }
+  },
+  {
+    "nombre": "Sair Granada Garzón",
+    "cargo": "Vocal",
+    "descripcion": "Biografía",
+    "foto": "thumbs/sair_granada.png",
+    "links": {
+      "email": "sair2212451@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002192403",
+      "linkedin": "https://www.linkedin.com/in/sairgranada"
+    }
+  },
+  {
+    "nombre": "Angie Gonzalez",
+    "cargo": "Vocal",
+    "descripcion": "Biografía",
+    "foto": "thumbs/angie_gonzalez.png",
+    "links": {
+      "email": "#",
+      "cvlac": "#",
+      "linkedin": "#"
+    }
+  },
+  {
+    "nombre": "Thomás Quiñonez",
+    "cargo": "Vocal",
+    "descripcion": "Biografía",
+    "foto": "thumbs/thomas_quinonez.png",
+    "links": {
+      "email": "thomas2230584@correo.uis.edu.co",
+      "cvlac": "#",
+      "linkedin": "https://www.linkedin.com/in/thomasquiñonez"
+    }
+  },
+  {
+    "nombre": "Manuel Gonzalez",
+    "cargo": "Vocal",
+    "descripcion": "Biografía",
+    "foto": "thumbs/manuel_gonzalez.png",
+    "links": {
+      "email": "manuel2230590@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002418997",
+      "linkedin": "https://www.linkedin.com/in/manuel-gonzalez-552396273"
+    }
+  },
+  {
+    "nombre": "Silvia Vargas Cano",
+    "cargo": "Vocal",
+    "descripcion": "Biografía",
+    "foto": "thumbs/silvia_vargas.png",
+    "links": {
+      "email": "silvia2231169@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002419000",
+      "linkedin": "https://www.linkedin.com/in/silvia-alejandra-vargas-cano-a61057358"
+    }
+  },
+  {
+    "nombre": "María Paula Roa Archila",
+    "cargo": "Vocal",
+    "descripcion": "Biografía",
+    "foto": "thumbs/maria_roa.png",
+    "links": {
+      "email": "maria2230564@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002419295",
+      "linkedin": "https://www.linkedin.com/in/maria-paula-roa-archila-91a216260"
+    }
+  },
+  {
+    "nombre": "",
+    "cargo": "Vocal",
+    "descripcion": "Biografía",
+    "foto": "thumbs/default.png",
+    "links": {
+      "email": "#",
+      "cvlac": "#",
+      "linkedin": "#"
+    }
+  },
+  {
+    "nombre": "",
+    "cargo": "Vocal",
+    "descripcion": "Biografía",
+    "foto": "thumbs/default.png",
+    "links": {
+      "email": "#",
+      "cvlac": "#",
+      "linkedin": "#"
+    }
+  }
+]

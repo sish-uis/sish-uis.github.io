@@ -1,0 +1,44 @@
+/* components.css */
+/* Botones de accesibilidad */
+.btn_contraste, .btn_aumentar, .btn_restablecer, .btn_disminuir {
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: 27px 27px;
+  background-color: #3366CC !important;
+}
+
+#circulo_1 { width:100px; height:100px; border-radius:50%; background:#004884; }
+#circulo_2 { width:100px; height:100px; border-radius:50%; background:#4b4b4c; }
+#circulo_3 { width:100px; height:100px; border-radius:50%; background:#007bff; }
+
+#cuadrado_1 { width:100px; height:100px; background:#004884; }
+#cuadrado_2 { width:100px; height:100px; background:#4b4b4c; }
+#cuadrado_3 { width:100px; height:100px; background:#007bff; }
+#cuadrado_4 { width:100px; height:100px; background:#008E65; }
+#cuadrado_5 { width:100px; height:100px; background:#3366CC; }
+#cuadrado_6 { width:100px; height:100px; background:#727cf5; }
+
+.center { margin-left:auto; margin-right:auto; display:block; }
+
+/* Carousel */
+.carousel-indicators li { width:10px; height:10px; border-radius:50%; border:1px solid #fff; background-color: transparent; }
+.carousel-indicators .active { background-color: #FFF; }
+.carousel-control-prev-icon { background-image: url("../images/flecha_izquierda.709c226db12f.png") !important; }
+.carousel-control-next-icon { background-image: url("../images/flecha_derecha.1a5b6d546945.png") !important; }
+
+/* Timeline */
+.timeline {
+  border-left: 3px solid #727cf5;
+  border-radius: 0 4px 4px 0;
+  background: rgba(114,124,245,0.09);
+  padding: 50px;
+  max-width: 70%;
+  position: relative;
+  list-style:none;
+}
+
+.timeline .event { border-bottom:1px dashed #e8ebf1; padding-bottom:25px; margin-bottom:25px; position:relative; }
+.timeline .event:last-of-type { border:none; padding-bottom:0; margin-bottom:0; }

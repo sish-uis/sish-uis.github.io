@@ -1,0 +1,25 @@
+[
+  {
+    "nombre": "Juan Diego Colegial Gutiérrez",
+    "cargo": "Director",
+    "descripcion": "Geólogo vinculado a la Universidad Industrial de Santander desde 1990. Conformó equipos de trabajo en empresas de consultoría en el área de Geotecnia e Hidrogeología. Estuvo vinculado al INGEOMINAS (hoy Servicio Geológico Colombiano) en el área de Geología Ambiental.\n\nRealizó comisiones administrativas como director de escuela (geología e ingeniería metalúrgica), Decano de la Facultad de Ingenierías Fisicoquímicas. También dictó cursos de formación de pregrado en sedimentología, cartografía geológica regional y aplicada, teledetección, Sistemas de Información Geográfica, geomorfología, geotecnia y geología ambiental y cursos de ingeniería geológica en la maestría de geotecnia.\n\nEn actividades de extensión, participó en proyectos con entidades como el Servicio Geológico Colombiano, la Agencia Nacional de Minería, ECOPETROL y MINCIENCIAS, con proyectos relacionados con cartografía geológica, evaluación de la amenaza por movimientos en masa (escalas 1:100000 y 1:25000), cartografía para prospección de recursos, estudios hidrogeológicos entre otros.",
+    "foto": "/assets/img/miembros/Juan-Diego-Colegial-Gutierrez.png",
+    "links": {
+      "email": "colegial@uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000042803",
+      "linkedin": "https://www.linkedin.com/in/juan-diego-colegial-guti%C3%A9rrez-72621362/"
+    }
+  },
+  {
+    "nombre": "Luisa Casadiegos Agudelo",
+    "cargo": "Docente orientadora",
+    "descripcion": "Profesora vinculada a la Universidad Industrial de Santander.",
+    "foto": "thumbs/luisa_casadiegos.png",
+    "links": {
+      "email": "",
+      "cvlac": "",
+      "linkedin": ""
+    }
+  }
+]
+
