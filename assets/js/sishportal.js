@@ -37,10 +37,10 @@ function cargarEquipo(ruta, contenedorId) {
                 <!-- Columna foto + contacto -->
                 <div class="col-md-5 d-flex flex-column align-items-center p-3">
                   <img src="${persona.foto}" class="img-fluid rounded mb-2" alt="${persona.nombre}" style="width: 180px; height: auto;">
-                  <h6 class="card-title mb-1">Datos de contacto</h6>
+                  <h6 class="card-title mb-3">Datos de contacto</h6> <!-- aumenté mb-1 a mb-3 -->
 
                   <!-- Íconos CvLAC y LinkedIn separados con gap -->
-                  <div class="d-flex justify-content-center mb-2" style="gap: 20px;">
+                  <div class="d-flex justify-content-center mb-4" style="gap: 20px;"> <!-- aumenté mb-2 a mb-4 -->
                     ${persona.links?.cvlac ? `<a href="${persona.links.cvlac}" target="_blank" title="CvLAC" class="text-primary">
                       <em class="fas fa-file-alt" style="font-size: 1.5rem;"></em></a>` : ""}
                     ${persona.links?.linkedin ? `<a href="${persona.links.linkedin}" target="_blank" title="LinkedIn" class="text-primary">

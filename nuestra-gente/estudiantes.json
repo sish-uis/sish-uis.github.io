@@ -22,14 +22,14 @@
     }
   },
   {
-    "nombre": "Juliana Chacón",
+    "nombre": "María Juliana Chacón Porras",
     "cargo": "Secretaria",
-    "descripcion": "Biografía",
-    "foto": "thumbs/juliana_chacon.png",
+    "descripcion": "Estudiante de geología de sexto semestre con intereses en la Geofísica, Hidrogeología y Sistemas de Información Geográfica (SIG). Tengo habilidades en programación usando Python y JavaScript aplicados a la teledetección, análisis de datos y estadística multivariable.",
+    "foto": "/assets/img/miembros/Juliana-Chacon.png",
     "links": {
       "email": "maria2230597@correo.uis.edu.co",
       "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002277361",
-      "linkedin": "#"
+      "linkedin": ""
     }
   },
   {
@@ -38,9 +38,9 @@
     "descripcion": "Biografía",
     "foto": "thumbs/juliana_lavacude.png",
     "links": {
-      "email": "#",
-      "cvlac": "#",
-      "linkedin": "#"
+      "email": "",
+      "cvlac": "",
+      "linkedin": ""
     }
   },
   {
@@ -49,9 +49,9 @@
     "descripcion": "Biografía",
     "foto": "thumbs/oscar_fonseca.png",
     "links": {
-      "email": "#",
-      "cvlac": "#",
-      "linkedin": "#"
+      "email": "",
+      "cvlac": "",
+      "linkedin": ""
     }
   },
   {
@@ -71,9 +71,9 @@
     "descripcion": "Biografía",
     "foto": "thumbs/angie_gonzalez.png",
     "links": {
-      "email": "#",
-      "cvlac": "#",
-      "linkedin": "#"
+      "email": "",
+      "cvlac": "",
+      "linkedin": ""
     }
   },
   {
@@ -83,7 +83,7 @@
     "foto": "thumbs/thomas_quinonez.png",
     "links": {
       "email": "thomas2230584@correo.uis.edu.co",
-      "cvlac": "#",
+      "cvlac": "",
       "linkedin": "https://www.linkedin.com/in/thomasquiñonez"
     }
   },
@@ -121,25 +121,14 @@
     }
   },
   {
-    "nombre": "",
+    "nombre": "Andrés Felipe Durán Lascarro",
     "cargo": "Vocal",
     "descripcion": "Biografía",
     "foto": "thumbs/default.png",
     "links": {
-      "email": "#",
-      "cvlac": "#",
-      "linkedin": "#"
-    }
-  },
-  {
-    "nombre": "",
-    "cargo": "Vocal",
-    "descripcion": "Biografía",
-    "foto": "thumbs/default.png",
-    "links": {
-      "email": "#",
-      "cvlac": "#",
-      "linkedin": "#"
+      "email": "",
+      "cvlac": "",
+      "linkedin": ""
     }
   }
 ]

@@ -13,12 +13,12 @@
   {
     "nombre": "Luisa Casadiegos Agudelo",
     "cargo": "Docente orientadora",
-    "descripcion": "Profesora vinculada a la Universidad Industrial de Santander.",
-    "foto": "thumbs/luisa_casadiegos.png",
+    "descripcion": "Geóloga con Magíster en Ingeniería Civil y amplia experiencia en la gestión del recurso hídrico subterráneo. Mi trayectoria combina la investigación y la docencia universitaria con la aplicación práctica en el sector minero. Actualmente, especialista en hidroquímica e isotopía para proyectos de mediana y gran minería en la región andina, aportando conocimientos técnicos para una gestión sostenible del agua.",
+    "foto": "/assets/img/miembros/Luisa-Casadiegos-Agudelo.png",
     "links": {
-      "email": "",
+      "email": "lcasadag@correo.uis.edu.co",
       "cvlac": "",
-      "linkedin": ""
+      "linkedin": "https://www.linkedin.com/in/luisa-casadiegos-agudelo/"
     }
   }
 ]
