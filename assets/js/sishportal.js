@@ -276,7 +276,7 @@ async function generarPDF() {
   const getBase64Image = url =>
     new Promise((resolve, reject) => {
       const img = new Image();
-      // 👇 en GitHub Pages no necesitas crossOrigin si es el mismo host
+      img.crossOrigin = "Anonymous";
       img.onload = () => {
         const canvas = document.createElement("canvas");
         canvas.width = img.width;
@@ -286,19 +286,16 @@ async function generarPDF() {
         const ext = url.toLowerCase().endsWith(".png") ? "image/png" : "image/jpeg";
         resolve(canvas.toDataURL(ext));
       };
-      img.onerror = (err) => {
-        console.error("❌ Error cargando imagen:", url, err);
-        reject(err);
-      };
+      img.onerror = () => reject(new Error(`❌ Error cargando imagen: ${url}`));
       img.src = url;
     });
 
   // === Encabezado logo SISH (derecha, altura = 1.96 cm) ===
-  const logo = await getBase64Image("./assets/img/actas/SISH.jpg");
+  const logo = await getBase64Image("assets/img/actas/SISH.jpg");
   const logoHeight = 19.6; // 1.96 cm
   const originalWidth = 93.9;
   const originalHeight = 24.6;
-  const logoWidth = (originalWidth / originalHeight) * logoHeight; // mantener proporción
+  const logoWidth = (originalWidth / originalHeight) * logoHeight;
   const logoX = pageWidth - logoWidth - 10;
   const logoY = (headerFooterMargin - logoHeight) / 2;
   doc.addImage(logo, "JPEG", logoX, logoY, logoWidth, logoHeight);
@@ -383,8 +380,8 @@ async function generarPDF() {
   y += observacionesText.length * 5 + 5;
 
   // === Pie de página logos ===
-  const uis = await getBase64Image("./assets/img/actas/UIS.JPG");
-  const gigba = await getBase64Image("./assets/img/actas/GIGBA.PNG");
+  const uis = await getBase64Image("assets/img/actas/UIS.JPG");
+  const gigba = await getBase64Image("assets/img/actas/GIGBA.PNG");
   const uisWidth = 28.8, uisHeight = 14;
   const gigbaWidth = 15.4, gigbaHeight = 15.6;
   const space = 5;
