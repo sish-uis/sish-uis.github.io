@@ -256,8 +256,8 @@ async function generarPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({ unit: "mm", format: "letter" });
 
-  const headerFooterMargin = 20; // 2 cm para encabezado y pie
-  const contentMargin = 30; // 3 cm para el cuerpo
+  const headerFooterMargin = 20;
+  const contentMargin = 30;
   const pageWidth = doc.internal.pageSize.getWidth();
   const pageHeight = doc.internal.pageSize.getHeight();
   const usableWidth = pageWidth - contentMargin * 2;
@@ -286,21 +286,18 @@ async function generarPDF() {
         const ext = url.toLowerCase().endsWith(".png") ? "image/png" : "image/jpeg";
         resolve(canvas.toDataURL(ext));
       };
-      img.onerror = () => {
-        console.error("❌ Error cargando imagen:", url);
-        reject(new Error("No se pudo cargar la imagen " + url));
-      };
+      img.onerror = () => reject(new Error("❌ Error cargando imagen: " + url));
       img.src = url;
     });
 
-  // === Encabezado logo SISH (derecha, altura = 1.96 cm) ===
-  const logo = await getBase64Image("https://sish-uis.github.io/generar-acta/assets/img/actas/SISH.jpg");
-  const logoHeight = 19.6; // 1.96 cm
+  // === Encabezado logo SISH ===
+  const logo = await getBase64Image("https://github.com/sish-uis/sish-uis.github.io/blob/main/assets/img/actas/SISH.jpg?raw=true");
+  const logoHeight = 19.6;
   const originalWidth = 93.9;
   const originalHeight = 24.6;
-  const logoWidth = (originalWidth / originalHeight) * logoHeight; // mantener proporción
-  const logoX = pageWidth - logoWidth - 10; // 10 mm desde borde derecho
-  const logoY = (headerFooterMargin - logoHeight) / 2; // centrado vertical en header
+  const logoWidth = (originalWidth / originalHeight) * logoHeight;
+  const logoX = pageWidth - logoWidth - 10;
+  const logoY = (headerFooterMargin - logoHeight) / 2;
   doc.addImage(logo, "JPEG", logoX, logoY, logoWidth, logoHeight);
 
   // === Contenido ===
@@ -314,12 +311,7 @@ async function generarPDF() {
   doc.setFontSize(11);
   const lineHeight = 7;
 
-  const infoData = [
-    ["Fecha:", fecha],
-    ["Hora:", hora],
-    ["Lugar:", lugar],
-  ];
-  infoData.forEach(([label, value]) => {
+  [["Fecha:", fecha], ["Hora:", hora], ["Lugar:", lugar]].forEach(([label, value]) => {
     doc.text(label, contentMargin, y);
     doc.setFont("helvetica", "normal");
     doc.text(value || "—", contentMargin + 25, y);
@@ -332,30 +324,20 @@ async function generarPDF() {
   doc.text("Asistentes:", contentMargin, y);
   y += lineHeight;
   doc.setFont("helvetica", "normal");
-  if (asistentes.length > 0) {
-    asistentes.forEach(a => {
-      doc.text(`• ${a}`, contentMargin + 5, y);
-      y += lineHeight;
-    });
-  } else {
-    doc.text("Ninguno", contentMargin + 5, y);
+  (asistentes.length ? asistentes : ["Ninguno"]).forEach(a => {
+    doc.text(`• ${a}`, contentMargin + 5, y);
     y += lineHeight;
-  }
+  });
   y += 5;
 
   doc.setFont("helvetica", "bold");
   doc.text("Temas a Tratar:", contentMargin, y);
   y += lineHeight;
   doc.setFont("helvetica", "normal");
-  if (temas.length > 0) {
-    temas.forEach(t => {
-      doc.text(`• ${t}`, contentMargin + 5, y);
-      y += lineHeight;
-    });
-  } else {
-    doc.text("Ninguno", contentMargin + 5, y);
+  (temas.length ? temas : ["Ninguno"]).forEach(t => {
+    doc.text(`• ${t}`, contentMargin + 5, y);
     y += lineHeight;
-  }
+  });
   y += 5;
 
   doc.setFont("helvetica", "bold");
@@ -383,8 +365,9 @@ async function generarPDF() {
   y += observacionesText.length * 5 + 5;
 
   // === Pie de página logos ===
-  const uis = await getBase64Image("https://sish-uis.github.io/generar-acta/assets/img/actas/UIS.JPG");
-  const gigba = await getBase64Image("https://sish-uis.github.io/generar-acta/assets/img/actas/GIGBA.PNG");
+  const uis = await getBase64Image("https://github.com/sish-uis/sish-uis.github.io/blob/main/assets/img/actas/UIS.JPG?raw=true");
+  const gigba = await getBase64Image("https://github.com/sish-uis/sish-uis.github.io/blob/main/assets/img/actas/GIGBA.PNG?raw=true");
+
   const uisWidth = 28.8, uisHeight = 14;
   const gigbaWidth = 15.4, gigbaHeight = 15.6;
   const space = 5;
