@@ -77,32 +77,32 @@ function renderFormularioActa(contenedorId) {
       <!-- Número, fecha, hora y lugar -->
       <div class="form-row">
         <div class="form-group col-md-3">
-          <label for="numeroActa">Número de Acta</label>
+          <label for="numeroActa"><b>Número de Acta</b></label>
           <input type="text" class="form-control" id="numeroActa" readonly>
         </div>
         <div class="form-group col-md-3">
-          <label for="fecha">Fecha</label>
+          <label for="fecha"><b>Fecha</b></label>
           <input type="date" class="form-control" id="fecha">
         </div>
         <div class="form-group col-md-3">
-          <label for="hora">Hora</label>
+          <label for="hora"><b>Hora</b></label>
           <input type="time" class="form-control" id="hora">
         </div>
         <div class="form-group col-md-3">
-          <label for="lugar">Lugar</label>
+          <label for="lugar"><b>Lugar</b></label>
           <input type="text" class="form-control" id="lugar" placeholder="Ej: Sala de reuniones JBV">
         </div>
       </div>
 
       <!-- Asistentes -->
       <div class="form-group">
-        <label>Asistentes</label>
-        <div id="asistentes" class="d-flex flex-column" style="gap:5px;"></div>
+        <label><b>Asistentes</b></label>
+        <div id="asistentes" class="row"></div>
       </div>
 
       <!-- Temas a tratar -->
       <div class="form-group">
-        <label>Temas a tratar</label>
+        <label><b>Temas a tratar</b></label>
         <ul id="temasList" class="list-group mb-2"></ul>
         <div class="input-group">
           <input type="text" class="form-control" id="nuevoTema" placeholder="Escribe un tema...">
@@ -116,21 +116,21 @@ function renderFormularioActa(contenedorId) {
 
       <!-- Descripción, Compromisos y Observaciones -->
       <div class="form-group">
-        <label for="descripcion">Descripción de la reunión</label>
+        <label for="descripcion"><b>Descripción de la reunión</b></label>
         <textarea class="form-control" id="descripcion" rows="5"></textarea>
       </div>
       <div class="form-group">
-        <label for="compromisos">Compromisos</label>
+        <label for="compromisos"><b>Compromisos</b></label>
         <textarea class="form-control" id="compromisos" rows="3"></textarea>
       </div>
       <div class="form-group">
-        <label for="observaciones">Observaciones Generales</label>
+        <label for="observaciones"><b>Observaciones Generales</b></label>
         <textarea class="form-control" id="observaciones" rows="3"></textarea>
       </div>
 
       <!-- Anexos -->
       <div class="form-group">
-        <label for="anexos">Anexos (imágenes)</label>
+        <label for="anexos"><b>Anexos (imágenes)</b></label>
         <input type="file" class="form-control-file" id="anexos" accept="image/*" multiple>
         <div id="preview" class="d-flex flex-wrap mt-3" style="gap:10px;"></div>
       </div>
@@ -166,7 +166,7 @@ function renderFormularioActa(contenedorId) {
       const asistentesDiv = contenedor.querySelector("#asistentes");
       lista.forEach(persona => {
         const div = document.createElement("div");
-        div.className = "form-check";
+        div.className = "form-check col-md-6"; // <- dos columnas
         div.innerHTML = `
           <input class="form-check-input" type="checkbox" value="${persona.nombre}" id="chk-${persona.nombre.replace(/\s+/g,'-')}">
           <label class="form-check-label" for="chk-${persona.nombre.replace(/\s+/g,'-')}">${persona.nombre}</label>
@@ -233,7 +233,7 @@ function renderFormularioActa(contenedorId) {
           card.className = "position-relative";
           card.style.width = "120px";
           card.innerHTML = `
-            <img src="${e.target.result}" class="img-thumbnail" style="width:100%;height:auto;object-fit:cover;">
+            <img src="\${e.target.result}" class="img-thumbnail" style="width:100%;height:auto;object-fit:cover;">
             <button type="button" class="btn btn-sm btn-outline-danger position-absolute" 
               style="top:5px;right:5px;border-radius:50%;" title="Eliminar imagen">
               <i class="fas fa-times"></i>
@@ -252,130 +252,165 @@ function renderFormularioActa(contenedorId) {
   generarBtn?.addEventListener("click", generarPDF);
 }
 
-// ===== Función Generar PDF =====
-function generarPDF() {
-  if (!window.jspdf) { 
-    alert("jsPDF no está cargado"); 
-    return; 
-  }
-
+async function generarPDF() {
   const { jsPDF } = window.jspdf;
-  const doc = new jsPDF({ format: "letter", unit: "cm" });
-  const margen = { top: 3.5, bottom: 2.5, left: 3, right: 3 };
-  let y = margen.top;
+  const doc = new jsPDF({ unit: "mm", format: "letter" });
 
-  const contenedor = document.getElementById("formulario-acta");
-  if (!contenedor) return;
+  const headerFooterMargin = 20; // 2 cm para encabezado y pie
+  const contentMargin = 30; // 3 cm para el cuerpo
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const pageHeight = doc.internal.pageSize.getHeight();
+  const usableWidth = pageWidth - contentMargin * 2;
 
-  // --- Función auxiliar para cargar imagen y devolver Promise ---
-  function loadImage(src) {
-    return new Promise((resolve, reject) => {
+  const numero = document.getElementById("numeroActa")?.value || "";
+  const fecha = document.getElementById("fecha")?.value || "";
+  const hora = document.getElementById("hora")?.value || "";
+  const lugar = document.getElementById("lugar")?.value || "";
+  const descripcion = document.getElementById("descripcion")?.value || "";
+  const compromisos = document.getElementById("compromisos")?.value || "";
+  const observaciones = document.getElementById("observaciones")?.value || "";
+
+  const asistentes = Array.from(document.querySelectorAll("#asistentes input:checked")).map(chk => chk.value);
+  const temas = Array.from(document.querySelectorAll("#temasList li span")).map(span => span.textContent);
+
+  const getBase64Image = url =>
+    new Promise((resolve, reject) => {
       const img = new Image();
-      img.src = src;
-      img.onload = () => resolve(img);
-      img.onerror = () => reject(`No se pudo cargar la imagen: ${src}`);
+      img.crossOrigin = "Anonymous";
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0);
+        const ext = url.toLowerCase().endsWith(".png") ? "image/png" : "image/jpeg";
+        resolve(canvas.toDataURL(ext));
+      };
+      img.onerror = reject;
+      img.src = url;
     });
+
+  // === Encabezado logo SISH (derecha, altura = 1.96 cm) ===
+  const logo = await getBase64Image("/assets/img/actas/SISH.jpg");
+  const logoHeight = 19.6; // 1.96 cm
+  const originalWidth = 93.9;
+  const originalHeight = 24.6;
+  const logoWidth = (originalWidth / originalHeight) * logoHeight; // mantener proporción
+  const logoX = pageWidth - logoWidth - 10; // 10 mm desde borde derecho
+  const logoY = (headerFooterMargin - logoHeight) / 2; // centrado vertical en header
+  doc.addImage(logo, "JPEG", logoX, logoY, logoWidth, logoHeight);
+
+  // === Contenido ===
+  let y = contentMargin;
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(14);
+  doc.text(`Acta No. ${numero}`, pageWidth / 2, y, { align: "center" });
+  y += 12;
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(11);
+  const lineHeight = 7;
+
+  const infoData = [
+    ["Fecha:", fecha],
+    ["Hora:", hora],
+    ["Lugar:", lugar],
+  ];
+  infoData.forEach(([label, value]) => {
+    doc.text(label, contentMargin, y);
+    doc.setFont("helvetica", "normal");
+    doc.text(value || "—", contentMargin + 25, y);
+    doc.setFont("helvetica", "bold");
+    y += lineHeight;
+  });
+  y += 5;
+
+  doc.setFont("helvetica", "bold");
+  doc.text("Asistentes:", contentMargin, y);
+  y += lineHeight;
+  doc.setFont("helvetica", "normal");
+  if (asistentes.length > 0) {
+    asistentes.forEach(a => {
+      doc.text(`• ${a}`, contentMargin + 5, y);
+      y += lineHeight;
+    });
+  } else {
+    doc.text("Ninguno", contentMargin + 5, y);
+    y += lineHeight;
   }
+  y += 5;
 
-  // --- Función para escribir título y valor ---
-  function escribir(titulo, valor, x, yPos) {
-    doc.setFont("Arial", "bold");
-    doc.text(titulo, x, yPos);
-    doc.setFont("Arial", "normal");
-    doc.text(valor, x + 1.5, yPos);
+  doc.setFont("helvetica", "bold");
+  doc.text("Temas a Tratar:", contentMargin, y);
+  y += lineHeight;
+  doc.setFont("helvetica", "normal");
+  if (temas.length > 0) {
+    temas.forEach(t => {
+      doc.text(`• ${t}`, contentMargin + 5, y);
+      y += lineHeight;
+    });
+  } else {
+    doc.text("Ninguno", contentMargin + 5, y);
+    y += lineHeight;
   }
+  y += 5;
 
-  // --- Generar PDF paso a paso ---
-  (async () => {
-    try {
-      // --- Encabezado ---
-      const encabezadoImg = await loadImage("/ruta/encabezado.png");
-      doc.addImage(encabezadoImg, "PNG", 21.59 - margen.right - 9.39, 0.5, 9.39, 2.46);
-      y += 3;
+  doc.setFont("helvetica", "bold");
+  doc.text("Descripción de la reunión:", contentMargin, y);
+  y += lineHeight;
+  doc.setFont("helvetica", "normal");
+  const descripcionText = doc.splitTextToSize(descripcion, usableWidth);
+  doc.text(descripcionText, contentMargin, y);
+  y += descripcionText.length * 5 + 5;
 
-      const numero = contenedor.querySelector("#numeroActa")?.value || "Acta";
-      const fecha = contenedor.querySelector("#fecha")?.value || "";
-      const hora = contenedor.querySelector("#hora")?.value || "";
-      const lugar = contenedor.querySelector("#lugar")?.value || "";
+  doc.setFont("helvetica", "bold");
+  doc.text("Compromisos:", contentMargin, y);
+  y += lineHeight;
+  doc.setFont("helvetica", "normal");
+  const compromisosText = doc.splitTextToSize(compromisos, usableWidth);
+  doc.text(compromisosText, contentMargin, y);
+  y += compromisosText.length * 5 + 5;
 
-      escribir("Número de Acta:", numero, margen.left, y);
-      escribir("Fecha:", fecha, margen.left + 10, y);
-      escribir("Hora:", hora, margen.left + 14, y);
-      escribir("Lugar:", lugar, margen.left + 17, y);
-      y += 1;
+  doc.setFont("helvetica", "bold");
+  doc.text("Observaciones Generales:", contentMargin, y);
+  y += lineHeight;
+  doc.setFont("helvetica", "normal");
+  const observacionesText = doc.splitTextToSize(observaciones, usableWidth);
+  doc.text(observacionesText, contentMargin, y);
+  y += observacionesText.length * 5 + 5;
 
-      // --- Asistentes ---
-      doc.setFont("Arial", "bold");
-      doc.text("Asistentes:", margen.left, y);
-      y += 0.5;
-      doc.setFont("Arial", "normal");
-      contenedor.querySelectorAll("#asistentes input:checked").forEach(chk => {
-        doc.text(`- ${chk.value}`, margen.left, y);
-        y += 0.5;
-      });
-      y += 0.5;
+  // === Pie de página logos ===
+  const uis = await getBase64Image("/assets/img/actas/UIS.JPG");
+  const gigba = await getBase64Image("/assets/img/actas/GIGBA.PNG");
+  const uisWidth = 28.8, uisHeight = 14;
+  const gigbaWidth = 15.4, gigbaHeight = 15.6;
+  const space = 5;
+  const maxLogoHeight = Math.max(uisHeight, gigbaHeight);
+  const pieY = pageHeight - headerFooterMargin + (headerFooterMargin - maxLogoHeight) / 2;
+  doc.addImage(uis, "JPEG", 10, pieY, uisWidth, uisHeight);
+  doc.addImage(gigba, "PNG", 10 + uisWidth + space, pieY, gigbaWidth, gigbaHeight);
 
-      // --- Temas ---
-      doc.setFont("Arial", "bold");
-      doc.text("Temas a tratar:", margen.left, y);
-      y += 0.5;
-      doc.setFont("Arial", "normal");
-      contenedor.querySelectorAll("#temasList li span").forEach(tema => {
-        doc.text(tema.textContent, margen.left, y);
-        y += 0.5;
-      });
-      y += 0.5;
+  // === Pie de página texto ===
+  const footerText = [
+    "Universidad Industrial de Santander",
+    "Bucaramanga, Colombia",
+    "https://sish-uis.github.io/",
+    "semillerohidrosistemas@gmail.com",
+    "@sish_uis"
+  ];
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(7);
 
-      // --- Descripción, Compromisos, Observaciones ---
-      ["#descripcion", "#compromisos", "#observaciones"].forEach(selector => {
-        const valor = contenedor.querySelector(selector)?.value || "";
-        doc.setFont("Arial", "bold");
-        doc.text(selector.replace("#","").charAt(0).toUpperCase() + selector.slice(2), margen.left, y);
-        y += 0.5;
-        doc.setFont("Arial", "normal");
-        const lines = doc.splitTextToSize(valor, 21.59 - margen.left - margen.right);
-        doc.text(lines, margen.left, y);
-        y += lines.length * 0.5 + 0.2;
-      });
+  const textHeight = footerText.length * 3.5;
+  const textY = pageHeight - headerFooterMargin + (headerFooterMargin - textHeight) / 2;
+  footerText.forEach((line, i) => {
+    doc.text(line, pageWidth - 10, textY + i * 3.5, { align: "right" });
+  });
 
-      // --- Anexos ---
-      for (const imgEl of contenedor.querySelectorAll("#preview img")) {
-        const img = await loadImage(imgEl.src);
-        const anchoParrafo = 21.59 - margen.left - margen.right;
-        const imgAncho = anchoParrafo * 0.75;
-        const imgAlto = imgAncho * (img.naturalHeight / img.naturalWidth);
-        if (y + imgAlto > 27.94 - margen.bottom) { 
-          doc.addPage(); 
-          y = margen.top; 
-        }
-        doc.addImage(img, "PNG", margen.left, y, imgAncho, imgAlto);
-        y += imgAlto + 0.5;
-      }
-
-      // --- Pie ---
-      const pie1 = await loadImage("/ruta/pie1.png");
-      const pie2 = await loadImage("/ruta/pie2.png");
-      doc.addImage(pie1, "PNG", margen.left, 27.94 - margen.bottom - 1.4, 2.88, 1.4);
-      doc.addImage(pie2, "PNG", margen.left + 2.88 + 0.2, 27.94 - margen.bottom - 1.56, 1.54, 1.56);
-
-      doc.setFont("Arial", "normal");
-      doc.setFontSize(8);
-      const textoDerecha = `Universidad Industrial de Santander
-Bucaramanga, Colombia
-https://sish-uis.github.io/
-semillerohidrosistemas@gmail.com
-@sish_uis`;
-      const lines = doc.splitTextToSize(textoDerecha, 21.59 - margen.left - margen.right);
-      doc.text(lines, 21.59 - margen.right - 7, 27.94 - margen.bottom - 1.5, { align: "right" });
-
-      // --- Guardar PDF ---
-      doc.save(`Acta_${numero}.pdf`);
-    } catch (error) {
-      console.error("Error generando PDF:", error);
-      alert("Ocurrió un error generando el PDF. Revisa la consola.");
-    }
-  })();
+  doc.save(`Acta-${numero || fecha}.pdf`);
 }
+
+
 
 // --- Ejecutar solo si existe el contenedor ---
 if (document.getElementById("formulario-acta")) {
