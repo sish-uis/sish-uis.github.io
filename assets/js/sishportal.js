@@ -306,7 +306,7 @@ async function generarPDF() {
   // URLs corregidas
   const logoURL = "https://sish-uis.github.io/assets/img/actas/SISH.jpg";
   const uisURL = "https://sish-uis.github.io/assets/img/actas/UIS.jpg";
-  const gigbaURL = "https://raw.githubusercontent.com/sish-uis/sish-uis.github.io/main/assets/img/actas/GIGBA.PNG";
+  const gigbaURL = "https://sish-uis.github.io/assets/img/actas/GIGBA.png";
 
   // Encabezado logo SISH (derecha)
   const logo = await getBase64Image(logoURL);
