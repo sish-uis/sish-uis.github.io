@@ -256,8 +256,8 @@ async function generarPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({ unit: "mm", format: "letter" });
 
-  const headerFooterMargin = 20; // 2 cm para encabezado y pie
-  const contentMargin = 30; // 3 cm para el cuerpo
+  const headerFooterMargin = 20; // 2 cm
+  const contentMargin = 30; // 3 cm
   const pageWidth = doc.internal.pageSize.getWidth();
   const pageHeight = doc.internal.pageSize.getHeight();
   const usableWidth = pageWidth - contentMargin * 2;
@@ -278,39 +278,47 @@ async function generarPDF() {
     document.querySelectorAll("#temasList li span")
   ).map(span => span.textContent);
 
-  const getBase64Image = url =>
-    new Promise((resolve, reject) => {
-      const img = new Image();
-      img.crossOrigin = "Anonymous";
-      img.onload = () => {
-        const canvas = document.createElement("canvas");
-        canvas.width = img.width;
-        canvas.height = img.height;
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(img, 0, 0);
-        const ext = url.toLowerCase().endsWith(".png") ? "image/png" : "image/jpeg";
-        resolve(canvas.toDataURL(ext));
-      };
-      img.onerror = () => reject(new Error("❌ No se pudo cargar la imagen: " + url));
-      img.src = url;
-    });
+  // Función para cargar imagen con fallback
+  const getBase64Image = async url => {
+    try {
+      return await new Promise((resolve, reject) => {
+        const img = new Image();
+        img.crossOrigin = "Anonymous";
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          canvas.width = img.width;
+          canvas.height = img.height;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0);
+          const ext = url.toLowerCase().endsWith(".png") ? "image/png" : "image/jpeg";
+          resolve(canvas.toDataURL(ext));
+        };
+        img.onerror = () => reject();
+        img.src = url;
+      });
+    } catch {
+      console.warn(`Imagen no cargó: ${url}, usando fallback`);
+      // Imagen fallback 1x1 transparente
+      return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAuMBgD0Xn1UAAAAASUVORK5CYII=";
+    }
+  };
 
-  // === URLs absolutas a imágenes en raw.githubusercontent.com ===
-  const logoURL = "https://raw.githubusercontent.com/sish-uis/sish-uis.github.io/main/assets/img/actas/SISH.jpg";
-  const uisURL = "https://raw.githubusercontent.com/sish-uis/sish-uis.github.io/main/assets/img/actas/UIS.JPG";
+  // URLs corregidas
+  const logoURL = "https://sish-uis.github.io/assets/img/actas/SISH.jpg";
+  const uisURL = "https://sish-uis.github.io/assets/img/actas/UIS.jpg";
   const gigbaURL = "https://raw.githubusercontent.com/sish-uis/sish-uis.github.io/main/assets/img/actas/GIGBA.PNG";
 
-  // === Encabezado logo SISH (derecha, altura = 1.96 cm) ===
+  // Encabezado logo SISH (derecha)
   const logo = await getBase64Image(logoURL);
-  const logoHeight = 19.6; // 1.96 cm
+  const logoHeight = 19.6;
   const originalWidth = 93.9;
   const originalHeight = 24.6;
-  const logoWidth = (originalWidth / originalHeight) * logoHeight; // mantener proporción
-  const logoX = pageWidth - logoWidth - 10; // 10 mm desde borde derecho
-  const logoY = (headerFooterMargin - logoHeight) / 2; // centrado vertical en header
+  const logoWidth = (originalWidth / originalHeight) * logoHeight;
+  const logoX = pageWidth - logoWidth - 10;
+  const logoY = (headerFooterMargin - logoHeight) / 2;
   doc.addImage(logo, "JPEG", logoX, logoY, logoWidth, logoHeight);
 
-  // === Contenido ===
+  // Contenido
   let y = contentMargin;
   doc.setFont("helvetica", "bold");
   doc.setFontSize(14);
@@ -389,7 +397,7 @@ async function generarPDF() {
   doc.text(observacionesText, contentMargin, y);
   y += observacionesText.length * 5 + 5;
 
-  // === Pie de página logos ===
+  // Pie de página logos
   const uis = await getBase64Image(uisURL);
   const gigba = await getBase64Image(gigbaURL);
   const uisWidth = 28.8, uisHeight = 14;
@@ -400,7 +408,7 @@ async function generarPDF() {
   doc.addImage(uis, "JPEG", 10, pieY, uisWidth, uisHeight);
   doc.addImage(gigba, "PNG", 10 + uisWidth + space, pieY, gigbaWidth, gigbaHeight);
 
-  // === Pie de página texto ===
+  // Pie de página texto
   const footerText = [
     "Universidad Industrial de Santander",
     "Bucaramanga, Colombia",
@@ -417,9 +425,11 @@ async function generarPDF() {
     doc.text(line, pageWidth - 10, textY + i * 3.5, { align: "right" });
   });
 
-  // === Guardar ===
+  // Guardar PDF
   doc.save(`Acta-${numero || fecha}.pdf`);
 }
+
+
 
 
 
