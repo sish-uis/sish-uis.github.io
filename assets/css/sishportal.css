@@ -689,7 +689,8 @@ li.breadcrumb-item a {
 }
 
 a:visited {
-    color: purple !important;
+    color: inherit !important; /* hereda el color normal del link */
+    text-decoration: none !important; /* opcional, si no quieres subrayado */
 }
 
 /* --------------------- MENÃš CASCADA ----------------------------------- */
@@ -746,6 +747,8 @@ a:visited {
 .carousel-indicators {
     filter: invert(100%);
 }
+
+
 
 /*** Habilita el :hover para abrir los desplegables del menÃº principal ***/
 #mainNav .dropdown:hover > .dropdown-menu {

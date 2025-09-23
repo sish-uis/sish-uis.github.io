@@ -426,15 +426,19 @@ const asistentes = Array.from(
   doc.text("Temas a Tratar:", contentMargin, y);
   y += lineHeight;
   doc.setFont("helvetica", "normal");
-  if (temas.length > 0) {
-    temas.forEach(t => {
-      doc.text(`• ${t}`, contentMargin + 5, y);
-      y += lineHeight;
-    });
-  } else {
-    doc.text("Ninguno", contentMargin + 5, y);
+if (temas.length > 0) {
+  temas.forEach((t, i) => {
+    // Quitar número inicial si existe en el span
+    const textoLimpio = t.replace(/^\d+\.\s*/, "");
+    doc.text(`${i + 1}. ${textoLimpio}`, contentMargin + 5, y);
     y += lineHeight;
-  }
+  });
+} else {
+  doc.text("Ninguno", contentMargin + 5, y);
+  y += lineHeight;
+}
+
+
   y += 5;
 
   doc.setFont("helvetica", "bold");
@@ -488,6 +492,16 @@ const asistentes = Array.from(
   footerText.forEach((line, i) => {
     doc.text(line, pageWidth - 10, textY + i * 3.5, { align: "right" });
   });
+
+  // Pie de página texto
+footerText.forEach((line, i) => {
+  doc.text(line, pageWidth - 10, textY + i * 3.5, { align: "right" });
+});
+
+// Número de página
+doc.setFont("helvetica", "normal");
+doc.setFontSize(8);
+doc.text(`Página | 1`, pageWidth - 10, pageHeight / 2, { align: "right"});
 
   // Guardar PDF
   doc.save(`Acta-${numero || fecha}.pdf`);
