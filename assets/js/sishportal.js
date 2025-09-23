@@ -256,8 +256,8 @@ async function generarPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({ unit: "mm", format: "letter" });
 
-  const headerFooterMargin = 20;
-  const contentMargin = 30;
+  const headerFooterMargin = 20; // 2 cm para encabezado y pie
+  const contentMargin = 30; // 3 cm para el cuerpo
   const pageWidth = doc.internal.pageSize.getWidth();
   const pageHeight = doc.internal.pageSize.getHeight();
   const usableWidth = pageWidth - contentMargin * 2;
@@ -270,8 +270,13 @@ async function generarPDF() {
   const compromisos = document.getElementById("compromisos")?.value || "";
   const observaciones = document.getElementById("observaciones")?.value || "";
 
-  const asistentes = Array.from(document.querySelectorAll("#asistentes input:checked")).map(chk => chk.value);
-  const temas = Array.from(document.querySelectorAll("#temasList li span")).map(span => span.textContent);
+  const asistentes = Array.from(
+    document.querySelectorAll("#asistentes input:checked")
+  ).map(chk => chk.value);
+
+  const temas = Array.from(
+    document.querySelectorAll("#temasList li span")
+  ).map(span => span.textContent);
 
   const getBase64Image = url =>
     new Promise((resolve, reject) => {
@@ -286,18 +291,23 @@ async function generarPDF() {
         const ext = url.toLowerCase().endsWith(".png") ? "image/png" : "image/jpeg";
         resolve(canvas.toDataURL(ext));
       };
-      img.onerror = () => reject(new Error("❌ Error cargando imagen: " + url));
+      img.onerror = () => reject(new Error("❌ No se pudo cargar la imagen: " + url));
       img.src = url;
     });
 
-  // === Encabezado logo SISH ===
-  const logo = await getBase64Image("https://github.com/sish-uis/sish-uis.github.io/blob/main/assets/img/actas/SISH.jpg?raw=true");
-  const logoHeight = 19.6;
+  // === URLs absolutas a imágenes en raw.githubusercontent.com ===
+  const logoURL = "https://raw.githubusercontent.com/sish-uis/sish-uis.github.io/main/assets/img/actas/SISH.jpg";
+  const uisURL = "https://raw.githubusercontent.com/sish-uis/sish-uis.github.io/main/assets/img/actas/UIS.JPG";
+  const gigbaURL = "https://raw.githubusercontent.com/sish-uis/sish-uis.github.io/main/assets/img/actas/GIGBA.PNG";
+
+  // === Encabezado logo SISH (derecha, altura = 1.96 cm) ===
+  const logo = await getBase64Image(logoURL);
+  const logoHeight = 19.6; // 1.96 cm
   const originalWidth = 93.9;
   const originalHeight = 24.6;
-  const logoWidth = (originalWidth / originalHeight) * logoHeight;
-  const logoX = pageWidth - logoWidth - 10;
-  const logoY = (headerFooterMargin - logoHeight) / 2;
+  const logoWidth = (originalWidth / originalHeight) * logoHeight; // mantener proporción
+  const logoX = pageWidth - logoWidth - 10; // 10 mm desde borde derecho
+  const logoY = (headerFooterMargin - logoHeight) / 2; // centrado vertical en header
   doc.addImage(logo, "JPEG", logoX, logoY, logoWidth, logoHeight);
 
   // === Contenido ===
@@ -311,7 +321,12 @@ async function generarPDF() {
   doc.setFontSize(11);
   const lineHeight = 7;
 
-  [["Fecha:", fecha], ["Hora:", hora], ["Lugar:", lugar]].forEach(([label, value]) => {
+  const infoData = [
+    ["Fecha:", fecha],
+    ["Hora:", hora],
+    ["Lugar:", lugar],
+  ];
+  infoData.forEach(([label, value]) => {
     doc.text(label, contentMargin, y);
     doc.setFont("helvetica", "normal");
     doc.text(value || "—", contentMargin + 25, y);
@@ -324,20 +339,30 @@ async function generarPDF() {
   doc.text("Asistentes:", contentMargin, y);
   y += lineHeight;
   doc.setFont("helvetica", "normal");
-  (asistentes.length ? asistentes : ["Ninguno"]).forEach(a => {
-    doc.text(`• ${a}`, contentMargin + 5, y);
+  if (asistentes.length > 0) {
+    asistentes.forEach(a => {
+      doc.text(`• ${a}`, contentMargin + 5, y);
+      y += lineHeight;
+    });
+  } else {
+    doc.text("Ninguno", contentMargin + 5, y);
     y += lineHeight;
-  });
+  }
   y += 5;
 
   doc.setFont("helvetica", "bold");
   doc.text("Temas a Tratar:", contentMargin, y);
   y += lineHeight;
   doc.setFont("helvetica", "normal");
-  (temas.length ? temas : ["Ninguno"]).forEach(t => {
-    doc.text(`• ${t}`, contentMargin + 5, y);
+  if (temas.length > 0) {
+    temas.forEach(t => {
+      doc.text(`• ${t}`, contentMargin + 5, y);
+      y += lineHeight;
+    });
+  } else {
+    doc.text("Ninguno", contentMargin + 5, y);
     y += lineHeight;
-  });
+  }
   y += 5;
 
   doc.setFont("helvetica", "bold");
@@ -365,9 +390,8 @@ async function generarPDF() {
   y += observacionesText.length * 5 + 5;
 
   // === Pie de página logos ===
-  const uis = await getBase64Image("https://github.com/sish-uis/sish-uis.github.io/blob/main/assets/img/actas/UIS.JPG?raw=true");
-  const gigba = await getBase64Image("https://github.com/sish-uis/sish-uis.github.io/blob/main/assets/img/actas/GIGBA.PNG?raw=true");
-
+  const uis = await getBase64Image(uisURL);
+  const gigba = await getBase64Image(gigbaURL);
   const uisWidth = 28.8, uisHeight = 14;
   const gigbaWidth = 15.4, gigbaHeight = 15.6;
   const space = 5;
@@ -393,6 +417,7 @@ async function generarPDF() {
     doc.text(line, pageWidth - 10, textY + i * 3.5, { align: "right" });
   });
 
+  // === Guardar ===
   doc.save(`Acta-${numero || fecha}.pdf`);
 }
 
