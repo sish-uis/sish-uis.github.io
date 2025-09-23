@@ -316,11 +316,13 @@ async function generarPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({ unit: "mm", format: "letter" });
 
-  const headerFooterMargin = 20; // 2 cm
-  const contentMargin = 30; // 3 cm
+  const headerFooterMargin = 20;
+  const extraMargin = 2;
+  const contentMargin = 30;
   const pageWidth = doc.internal.pageSize.getWidth();
   const pageHeight = doc.internal.pageSize.getHeight();
   const usableWidth = pageWidth - contentMargin * 2;
+  const bottomLimit = pageHeight - headerFooterMargin - extraMargin - 15;
 
   const numero = document.getElementById("numeroActa")?.value || "";
   const fecha = document.getElementById("fecha")?.value || "";
@@ -330,19 +332,12 @@ async function generarPDF() {
   const compromisos = document.getElementById("compromisos")?.value || "";
   const observaciones = document.getElementById("observaciones")?.value || "";
 
-const asistentes = Array.from(
-  document.querySelectorAll("#asistentes input:checked")
-).map(chk => {
-  const label = chk.nextElementSibling?.textContent || chk.value;
-  return label; // esto incluye el "(externo)" si existe
-});
+  const asistentes = Array.from(document.querySelectorAll("#asistentes input:checked"))
+    .map(chk => chk.nextElementSibling?.textContent || chk.value);
 
+  const temas = Array.from(document.querySelectorAll("#temasList li span"))
+    .map(span => span.textContent);
 
-  const temas = Array.from(
-    document.querySelectorAll("#temasList li span")
-  ).map(span => span.textContent);
-
-  // Función para cargar imagen con fallback
   const getBase64Image = async url => {
     try {
       return await new Promise((resolve, reject) => {
@@ -361,151 +356,136 @@ const asistentes = Array.from(
         img.src = url;
       });
     } catch {
-      console.warn(`Imagen no cargó: ${url}, usando fallback`);
-      // Imagen fallback 1x1 transparente
       return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAuMBgD0Xn1UAAAAASUVORK5CYII=";
     }
   };
 
-  // URLs corregidas
   const logoURL = "https://sish-uis.github.io/assets/img/actas/SISH.jpg";
   const uisURL = "https://sish-uis.github.io/assets/img/actas/UIS.jpg";
   const gigbaURL = "https://sish-uis.github.io/assets/img/actas/GIGBA.png";
 
-  // Encabezado logo SISH (derecha)
   const logo = await getBase64Image(logoURL);
-  const logoHeight = 19.6;
-  const originalWidth = 93.9;
-  const originalHeight = 24.6;
-  const logoWidth = (originalWidth / originalHeight) * logoHeight;
-  const logoX = pageWidth - logoWidth - 10;
-  const logoY = (headerFooterMargin - logoHeight) / 2;
-  doc.addImage(logo, "JPEG", logoX, logoY, logoWidth, logoHeight);
+  const uis = await getBase64Image(uisURL);
+  const gigba = await getBase64Image(gigbaURL);
 
-  // Contenido
+  let pageNum = 1;
   let y = contentMargin;
+  const lineHeight = 7;
+  const sectionSpacing = 7; // espacio uniforme antes de subtítulos
+
+  const addHeader = () => {
+    const logoHeight = 19.6;
+    const logoWidth = (93.9 / 24.6) * logoHeight;
+    const logoX = pageWidth - logoWidth - 10;
+    const logoY = (headerFooterMargin - logoHeight) / 2 + extraMargin;
+    doc.addImage(logo, "JPEG", logoX, logoY, logoWidth, logoHeight);
+  };
+
+  const addFooter = () => {
+    const uisWidth = 28.8, uisHeight = 14;
+    const gigbaWidth = 15.4, gigbaHeight = 15.6;
+    const space = 5;
+    const maxLogoHeight = Math.max(uisHeight, gigbaHeight);
+    const pieY = pageHeight - headerFooterMargin + (headerFooterMargin - maxLogoHeight) / 2 - extraMargin;
+
+    doc.addImage(uis, "JPEG", 10, pieY, uisWidth, uisHeight);
+    doc.addImage(gigba, "PNG", 10 + uisWidth + space, pieY, gigbaWidth, gigbaHeight);
+
+    const footerText = [
+      "Universidad Industrial de Santander",
+      "Bucaramanga, Colombia",
+      "https://sish-uis.github.io/",
+      "semillerohidrosistemas@gmail.com",
+      "@sish_uis"
+    ];
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(7);
+    footerText.forEach((line, i) => {
+      doc.text(line, pageWidth - 10, pieY + 3 + i * 3.5 - extraMargin, { align: "right" });
+    });
+
+    doc.setFontSize(8);
+    doc.text(`Página | ${pageNum}`, pageWidth - 10, pageHeight / 2, { align: "right" });
+  };
+
+  const addText = (textArr, x = contentMargin, lh = 5) => {
+    textArr.forEach(line => {
+      if (y + lh > bottomLimit) {
+        addFooter();
+        doc.addPage();
+        pageNum++;
+        addHeader();
+        y = contentMargin;
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(11);
+      }
+      doc.text(line, x, y);
+      y += lh;
+    });
+  };
+
+  addHeader();
+
+  // Título centrado
   doc.setFont("helvetica", "bold");
   doc.setFontSize(14);
-  doc.text(`Acta No. ${numero}`, pageWidth / 2, y, { align: "center" });
-  y += 12;
+  const titleText = `Acta No. ${numero}`;
+  const titleX = (pageWidth - doc.getTextWidth(titleText)) / 2;
+  addText([titleText], titleX, 12);
 
+  // Fecha / Hora / Lugar
   doc.setFont("helvetica", "bold");
   doc.setFontSize(11);
-  const lineHeight = 7;
-
-  const infoData = [
-    ["Fecha:", fecha],
-    ["Hora:", hora],
-    ["Lugar:", lugar],
-  ];
+  const infoData = [["Fecha:", fecha], ["Hora:", hora], ["Lugar:", lugar]];
   infoData.forEach(([label, value]) => {
-    doc.text(label, contentMargin, y);
-    doc.setFont("helvetica", "normal");
-    doc.text(value || "—", contentMargin + 25, y);
-    doc.setFont("helvetica", "bold");
-    y += lineHeight;
+    addText([`${label} ${value || "—"}`], contentMargin, lineHeight);
   });
   y += 5;
 
+  // Asistentes
   doc.setFont("helvetica", "bold");
-  doc.text("Asistentes:", contentMargin, y);
-  y += lineHeight;
+  addText(["Asistentes:"], contentMargin, lineHeight);
   doc.setFont("helvetica", "normal");
   if (asistentes.length > 0) {
-    asistentes.forEach(a => {
-      doc.text(`• ${a}`, contentMargin + 5, y);
-      y += lineHeight;
-    });
+    asistentes.forEach(a => addText([`• ${a}`], contentMargin + 5, lineHeight));
   } else {
-    doc.text("Ninguno", contentMargin + 5, y);
-    y += lineHeight;
+    addText(["Ninguno"], contentMargin + 5, lineHeight);
   }
   y += 5;
 
+  // Temas a tratar
   doc.setFont("helvetica", "bold");
-  doc.text("Temas a Tratar:", contentMargin, y);
-  y += lineHeight;
+  addText(["Temas a Tratar:"], contentMargin, lineHeight);
   doc.setFont("helvetica", "normal");
-if (temas.length > 0) {
-  temas.forEach((t, i) => {
-    // Quitar número inicial si existe en el span
-    const textoLimpio = t.replace(/^\d+\.\s*/, "");
-    doc.text(`${i + 1}. ${textoLimpio}`, contentMargin + 5, y);
-    y += lineHeight;
-  });
-} else {
-  doc.text("Ninguno", contentMargin + 5, y);
-  y += lineHeight;
-}
-
-
+  if (temas.length > 0) {
+    temas.forEach((t, i) => addText([`${i + 1}. ${t.replace(/^\d+\.\s*/, "")}`], contentMargin + 5, lineHeight));
+  } else {
+    addText(["Ninguno"], contentMargin + 5, lineHeight);
+  }
   y += 5;
 
-  doc.setFont("helvetica", "bold");
-  doc.text("Descripción de la reunión:", contentMargin, y);
-  y += lineHeight;
-  doc.setFont("helvetica", "normal");
-  const descripcionText = doc.splitTextToSize(descripcion, usableWidth);
-  doc.text(descripcionText, contentMargin, y);
-  y += descripcionText.length * 5 + 5;
-
-  doc.setFont("helvetica", "bold");
-  doc.text("Compromisos:", contentMargin, y);
-  y += lineHeight;
-  doc.setFont("helvetica", "normal");
-  const compromisosText = doc.splitTextToSize(compromisos, usableWidth);
-  doc.text(compromisosText, contentMargin, y);
-  y += compromisosText.length * 5 + 5;
-
-  doc.setFont("helvetica", "bold");
-  doc.text("Observaciones Generales:", contentMargin, y);
-  y += lineHeight;
-  doc.setFont("helvetica", "normal");
-  const observacionesText = doc.splitTextToSize(observaciones, usableWidth);
-  doc.text(observacionesText, contentMargin, y);
-  y += observacionesText.length * 5 + 5;
-
-  // Pie de página logos
-  const uis = await getBase64Image(uisURL);
-  const gigba = await getBase64Image(gigbaURL);
-  const uisWidth = 28.8, uisHeight = 14;
-  const gigbaWidth = 15.4, gigbaHeight = 15.6;
-  const space = 5;
-  const maxLogoHeight = Math.max(uisHeight, gigbaHeight);
-  const pieY = pageHeight - headerFooterMargin + (headerFooterMargin - maxLogoHeight) / 2;
-  doc.addImage(uis, "JPEG", 10, pieY, uisWidth, uisHeight);
-  doc.addImage(gigba, "PNG", 10 + uisWidth + space, pieY, gigbaWidth, gigbaHeight);
-
-  // Pie de página texto
-  const footerText = [
-    "Universidad Industrial de Santander",
-    "Bucaramanga, Colombia",
-    "https://sish-uis.github.io/",
-    "semillerohidrosistemas@gmail.com",
-    "@sish_uis"
+  // Secciones con espaciado uniforme
+  const sections = [
+    { title: "Descripción de la reunión:", content: descripcion },
+    { title: "Compromisos:", content: compromisos },
+    { title: "Observaciones Generales:", content: observaciones }
   ];
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(7);
 
-  const textHeight = footerText.length * 3.5;
-  const textY = pageHeight - headerFooterMargin + (headerFooterMargin - textHeight) / 2;
-  footerText.forEach((line, i) => {
-    doc.text(line, pageWidth - 10, textY + i * 3.5, { align: "right" });
+  sections.forEach(sec => {
+    y += sectionSpacing; // espaciado uniforme antes de cada subtítulo
+    doc.setFont("helvetica", "bold");
+    addText([sec.title], contentMargin, lineHeight);
+    doc.setFont("helvetica", "normal");
+    addText(doc.splitTextToSize(sec.content, usableWidth), contentMargin, 5);
   });
 
-  // Pie de página texto
-footerText.forEach((line, i) => {
-  doc.text(line, pageWidth - 10, textY + i * 3.5, { align: "right" });
-});
+  addFooter();
 
-// Número de página
-doc.setFont("helvetica", "normal");
-doc.setFontSize(8);
-doc.text(`Página | 1`, pageWidth - 10, pageHeight / 2, { align: "right"});
-
-  // Guardar PDF
   doc.save(`Acta-${numero || fecha}.pdf`);
 }
+
+
 
 // --- Ejecutar solo si existe el contenedor ---
 if (document.getElementById("formulario-acta")) {
