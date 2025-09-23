@@ -98,6 +98,15 @@ function renderFormularioActa(contenedorId) {
       <div class="form-group">
         <label><b>Asistentes</b></label>
         <div id="asistentes" class="row"></div>
+        <div class="input-group mt-2 mb-2">
+  <input type="text" class="form-control" id="nuevoAsistente" placeholder="Nombre de asistente externo">
+  <div class="input-group-append">
+    <button type="button" id="addAsistente" class="btn btn-outline-primary" title="Agregar asistente externo">
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+</div>
+
       </div>
 
       <!-- Temas a tratar -->
@@ -175,6 +184,57 @@ function renderFormularioActa(contenedorId) {
       });
     })
     .catch(err => console.error("Error cargando asistentes:", err));
+
+const nuevoAsistenteInput = contenedor.querySelector("#nuevoAsistente");
+const addAsistenteBtn = contenedor.querySelector("#addAsistente");
+
+function addAsistente(nombre) {
+  if (!nombre.trim()) return;
+
+  const asistentesDiv = contenedor.querySelector("#asistentes");
+  const div = document.createElement("div");
+  div.className = "form-check col-md-6 d-flex align-items-center justify-content-between";
+  const id = `chk-${nombre.replace(/\s+/g,'-')}`;
+
+  div.innerHTML = `
+    <div class="d-flex align-items-center">
+      <input class="form-check-input" type="checkbox" value="${nombre}" id="${id}" checked>
+      <label class="form-check-label ml-2" for="${id}">${nombre} (Externo)</label>
+    </div>
+    <div>
+      <button type="button" class="btn btn-sm btn-outline-warning mr-1" title="Editar"><i class="fas fa-edit"></i></button>
+      <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar"><i class="fas fa-times"></i></button>
+    </div>
+  `;
+
+  // Botón editar
+  div.querySelector(".btn-outline-warning").addEventListener("click", () => {
+    const nuevoNombre = prompt("Editar nombre del asistente:", nombre);
+    if (nuevoNombre && nuevoNombre.trim()) {
+      nombre = nuevoNombre.trim();
+      div.querySelector("label").textContent = `${nombre} (externo)`;
+      div.querySelector("input").value = nombre;
+    }
+  });
+
+  // Botón eliminar
+  div.querySelector(".btn-outline-danger").addEventListener("click", () => {
+    div.remove();
+  });
+
+  asistentesDiv.appendChild(div);
+  nuevoAsistenteInput.value = "";
+}
+
+// Eventos
+addAsistenteBtn?.addEventListener("click", () => addAsistente(nuevoAsistenteInput.value));
+nuevoAsistenteInput?.addEventListener("keypress", e => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    addAsistente(nuevoAsistenteInput.value);
+  }
+});
+
 
   // ===== Manejar Temas a Tratar =====
   const temasList = contenedor.querySelector("#temasList");
@@ -270,9 +330,13 @@ async function generarPDF() {
   const compromisos = document.getElementById("compromisos")?.value || "";
   const observaciones = document.getElementById("observaciones")?.value || "";
 
-  const asistentes = Array.from(
-    document.querySelectorAll("#asistentes input:checked")
-  ).map(chk => chk.value);
+const asistentes = Array.from(
+  document.querySelectorAll("#asistentes input:checked")
+).map(chk => {
+  const label = chk.nextElementSibling?.textContent || chk.value;
+  return label; // esto incluye el "(externo)" si existe
+});
+
 
   const temas = Array.from(
     document.querySelectorAll("#temasList li span")
@@ -429,17 +493,10 @@ async function generarPDF() {
   doc.save(`Acta-${numero || fecha}.pdf`);
 }
 
-
-
-
-
-
 // --- Ejecutar solo si existe el contenedor ---
 if (document.getElementById("formulario-acta")) {
   renderFormularioActa("formulario-acta");
 }
-
-
 
   // --- Cargar docentes y estudiantes ---
   cargarEquipo("/nuestra-gente/docentes.json", "docentes");
