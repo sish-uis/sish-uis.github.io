@@ -571,7 +571,82 @@ document.addEventListener("DOMContentLoaded", () => {
         fechaEl.textContent = "Error cargando la última acta.";
       });
   }
+});document.addEventListener("DOMContentLoaded", () => {
+  // --- CONFIG ---
+  const base = "https://sish-uis.github.io/historial-actas/actas/";
+
+  // --- HISTORIAL DE ACTAS ---
+  const historialContenedor = document.getElementById("historial-actas");
+
+  if (historialContenedor) {
+    fetch(`${base}historial.json`)
+      .then(r => r.json())
+      .then(data => {
+        if (!data.actas || data.actas.length === 0) {
+          historialContenedor.innerHTML = "<p>No hay actas registradas.</p>";
+          return;
+        }
+
+        // Ordenar por fecha descendente
+        data.actas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+
+        data.actas.forEach(acta => {
+          const fechaBonita = new Date(acta.fecha).toLocaleDateString("es-ES", {
+            weekday: "long", day: "numeric", month: "long", year: "numeric"
+          });
+
+          const item = document.createElement("div");
+          item.className = "list-group-item d-flex justify-content-between align-items-center";
+          item.innerHTML = `
+            <div>
+              <div style="font-weight:600">${fechaBonita}</div>
+              <small class="text-muted">${acta.archivo}</small>
+            </div>
+            <div class="btn-group">
+              <a href="${base + acta.archivo}" target="_blank" class="btn btn-sm btn-primary">Ver PDF</a>
+              <a href="${base + acta.archivo}" download class="btn btn-sm btn-outline-secondary">Descargar</a>
+            </div>
+          `;
+          historialContenedor.appendChild(item);
+        });
+      })
+      .catch(err => {
+        console.error("Error cargando historial:", err);
+        historialContenedor.innerHTML = "<p>Error cargando historial.</p>";
+      });
+  }
+
+  // --- ÚLTIMA ACTA ---
+  const fechaEl = document.getElementById("ultima-fecha");
+  const vistaEl = document.getElementById("ultima-vista");
+
+  if (fechaEl && vistaEl) {
+    fetch(`${base}historial.json`)
+      .then(r => r.json())
+      .then(data => {
+        if (!data.actas || data.actas.length === 0) {
+          fechaEl.textContent = "No hay actas disponibles.";
+          return;
+        }
+
+        // Ordenar y tomar la última
+        const ultima = data.actas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha))[0];
+        const fechaBonita = new Date(ultima.fecha).toLocaleDateString("es-ES", {
+          weekday: "long", day: "numeric", month: "long", year: "numeric"
+        });
+
+        fechaEl.textContent = `${fechaBonita} — ${ultima.archivo}`;
+        vistaEl.innerHTML = `
+          <iframe src="${base + ultima.archivo}" width="100%" height="650" style="border:1px solid #ccc;"></iframe>
+        `;
+      })
+      .catch(err => {
+        console.error("Error cargando última acta:", err);
+        fechaEl.textContent = "Error cargando la última acta.";
+      });
+  }
 });
+
 
 
 
