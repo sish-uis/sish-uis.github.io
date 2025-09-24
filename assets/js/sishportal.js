@@ -501,7 +501,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const historialContenedor = document.getElementById("historial-actas");
   if (!historialContenedor) return;
 
-  const base = "actas/"; // relativo a /historial-actas/
+  const base = "https://sish-uis.github.io/historial-actas/actas/";
 
   fetch(`${base}historial.json`)
     .then(r => r.json())
@@ -540,14 +540,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
 document.addEventListener("DOMContentLoaded", () => {
   const fechaEl = document.getElementById("ultima-fecha");
   const vistaEl = document.getElementById("ultima-vista");
   if (!fechaEl || !vistaEl) return;
 
-  // Ojo: como esta página está en /ultima-acta/, toca subir un nivel para ir al historial
-  const base = "../historial-actas/actas/";
-
+  const base = "https://sish-uis.github.io/historial-actas/actas/";
 
   fetch(`${base}historial.json`)
     .then(r => r.json())
@@ -573,6 +572,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fechaEl.textContent = "Error cargando la última acta.";
     });
 });
+
 
 // --- Forzar que los PDF se abran en otra pestaña ---
 function targetBlankForPdfReferences() {
