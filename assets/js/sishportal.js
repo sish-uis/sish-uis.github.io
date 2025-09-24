@@ -497,6 +497,82 @@ if (document.getElementById("formulario-acta")) {
   cargarEquipo("/nuestra-gente/estudiantes.json", "estudiantes");
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const historialContenedor = document.getElementById("historial-actas");
+  if (!historialContenedor) return;
+
+  const base = "actas/"; // relativo a /historial-actas/
+
+  fetch(`${base}historial.json`)
+    .then(r => r.json())
+    .then(data => {
+      if (!data.actas || data.actas.length === 0) {
+        historialContenedor.innerHTML = "<p>No hay actas registradas.</p>";
+        return;
+      }
+
+      // Ordenar por fecha descendente
+      data.actas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+
+      data.actas.forEach(acta => {
+        const fechaBonita = new Date(acta.fecha).toLocaleDateString("es-ES", {
+          weekday: "long", day: "numeric", month: "long", year: "numeric"
+        });
+
+        const item = document.createElement("div");
+        item.className = "list-group-item d-flex justify-content-between align-items-center";
+        item.innerHTML = `
+          <div>
+            <div style="font-weight:600">${fechaBonita}</div>
+            <small class="text-muted">${acta.nombre}</small>
+          </div>
+          <div class="btn-group">
+            <a href="${base + acta.nombre}" target="_blank" class="btn btn-sm btn-primary">Ver PDF</a>
+            <a href="${base + acta.nombre}" download class="btn btn-sm btn-outline-secondary">Descargar</a>
+          </div>
+        `;
+        historialContenedor.appendChild(item);
+      });
+    })
+    .catch(err => {
+      console.error("Error cargando historial:", err);
+      historialContenedor.innerHTML = "<p>Error cargando historial.</p>";
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const fechaEl = document.getElementById("ultima-fecha");
+  const vistaEl = document.getElementById("ultima-vista");
+  if (!fechaEl || !vistaEl) return;
+
+  // Ojo: como esta página está en /ultima-acta/, toca subir un nivel para ir al historial
+  const base = "../historial-actas/actas/";
+
+
+  fetch(`${base}historial.json`)
+    .then(r => r.json())
+    .then(data => {
+      if (!data.actas || data.actas.length === 0) {
+        fechaEl.textContent = "No hay actas disponibles.";
+        return;
+      }
+
+      // Ordenar y tomar la última
+      const ultima = data.actas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha))[0];
+      const fechaBonita = new Date(ultima.fecha).toLocaleDateString("es-ES", {
+        weekday: "long", day: "numeric", month: "long", year: "numeric"
+      });
+
+      fechaEl.textContent = fechaBonita;
+      vistaEl.innerHTML = `
+        <iframe src="${base + ultima.nombre}" width="100%" height="650" style="border:1px solid #ccc;"></iframe>
+      `;
+    })
+    .catch(err => {
+      console.error("Error cargando última acta:", err);
+      fechaEl.textContent = "Error cargando la última acta.";
+    });
+});
 
 // --- Forzar que los PDF se abran en otra pestaña ---
 function targetBlankForPdfReferences() {
