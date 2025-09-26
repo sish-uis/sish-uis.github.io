@@ -44,6 +44,13 @@ h6 {
     font-weight: 300;
 }
 
+.icon-actas a {
+  color: #3366CC !important; /* mismo azul que redes */
+  font-size: 1.3rem;         /* más pequeño que 1.7rem */
+  margin: 0 4px;
+}
+
+
 nav.navbar-govco {
     color: #FFF !important;
     background-color: #3366CC !important;
@@ -688,10 +695,6 @@ li.breadcrumb-item a {
     cursor: pointer;
 }
 
-a:visited {
-    color: inherit !important; /* hereda el color normal del link */
-    text-decoration: none !important; /* opcional, si no quieres subrayado */
-}
 
 /* --------------------- MENÃš CASCADA ----------------------------------- */
 @media (min-width: 992px) {

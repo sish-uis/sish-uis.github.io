@@ -154,19 +154,19 @@ function renderFormularioActa(contenedorId) {
   `;
 
   // ===== Autogenerar número de acta =====
-  const fechaInput = contenedor.querySelector("#fecha");
-  const numeroInput = contenedor.querySelector("#numeroActa");
-  if (fechaInput && numeroInput) {
-    fechaInput.addEventListener("change", () => {
-      const fecha = new Date(fechaInput.value);
-      if (!isNaN(fecha)) {
-        const dd = String(fecha.getDate()).padStart(2, "0");
-        const mm = String(fecha.getMonth() + 1).padStart(2, "0");
-        const yyyy = fecha.getFullYear();
-        numeroInput.value = `${dd}${mm}${yyyy}`;
-      }
-    });
-  }
+// ===== Autogenerar número de acta =====
+const fechaInput = contenedor.querySelector("#fecha");
+const numeroInput = contenedor.querySelector("#numeroActa");
+
+if (fechaInput && numeroInput) {
+  fechaInput.addEventListener("change", () => {
+    if (fechaInput.value) {
+      const [yyyy, mm, dd] = fechaInput.value.split("-");
+      numeroInput.value = `${dd}${mm}${yyyy}`;
+    }
+  });
+}
+
 
   // ===== Cargar asistentes =====
   fetch("/generar-acta/asistentes.json")
@@ -371,7 +371,7 @@ async function generarPDF() {
   let pageNum = 1;
   let y = contentMargin;
   const lineHeight = 7;
-  const sectionSpacing = 7; // espacio uniforme antes de subtítulos
+  const sectionSpacing = 7;
 
   const addHeader = () => {
     const logoHeight = 19.6;
@@ -465,7 +465,7 @@ async function generarPDF() {
   }
   y += 5;
 
-  // Secciones con espaciado uniforme
+  // Secciones
   const sections = [
     { title: "Descripción de la reunión:", content: descripcion },
     { title: "Compromisos:", content: compromisos },
@@ -473,17 +473,57 @@ async function generarPDF() {
   ];
 
   sections.forEach(sec => {
-    y += sectionSpacing; // espaciado uniforme antes de cada subtítulo
+    y += sectionSpacing;
     doc.setFont("helvetica", "bold");
     addText([sec.title], contentMargin, lineHeight);
     doc.setFont("helvetica", "normal");
     addText(doc.splitTextToSize(sec.content, usableWidth), contentMargin, 5);
   });
 
-  addFooter();
+  // === ANEXOS ===
+  const anexosInput = document.getElementById("anexos");
+  if (anexosInput && anexosInput.files.length > 0) {
+    y += sectionSpacing;
+    let count = 1;
+    for (const file of anexosInput.files) {
+      if (!file.type.startsWith("image/")) continue;
 
+      // Convertir a base64
+      const base64 = await new Promise(resolve => {
+        const reader = new FileReader();
+        reader.onload = e => resolve(e.target.result);
+        reader.readAsDataURL(file);
+      });
+
+      // Subtítulo
+      doc.setFont("helvetica", "bold");
+      addText([`Anexo ${count}:`], contentMargin, lineHeight);
+      doc.setFont("helvetica", "normal");
+
+      // Tamaño imagen (75% del ancho utilizable)
+      const imgProps = doc.getImageProperties(base64);
+      const imgWidth = usableWidth * 0.75;
+      const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+
+      if (y + imgHeight > bottomLimit) {
+        addFooter();
+        doc.addPage();
+        pageNum++;
+        addHeader();
+        y = contentMargin;
+      }
+
+      const imgX = contentMargin + (usableWidth - imgWidth) / 2; // centrada
+      doc.addImage(base64, file.type.includes("png") ? "PNG" : "JPEG", imgX, y, imgWidth, imgHeight);
+      y += imgHeight + 10;
+      count++;
+    }
+  }
+
+  addFooter();
   doc.save(`Acta-${numero || fecha}.pdf`);
 }
+
 
 
 
@@ -571,84 +611,104 @@ document.addEventListener("DOMContentLoaded", () => {
         fechaEl.textContent = "Error cargando la última acta.";
       });
   }
-});document.addEventListener("DOMContentLoaded", () => {
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   // --- CONFIG ---
   const base = "https://sish-uis.github.io/historial-actas/actas/";
 
-  // --- HISTORIAL DE ACTAS ---
-  const historialContenedor = document.getElementById("historial-actas");
+// --- HISTORIAL DE ACTAS ---
+const historialContenedor = document.getElementById("historial-actas");
 
-  if (historialContenedor) {
-    fetch(`${base}historial.json`)
-      .then(r => r.json())
-      .then(data => {
-        if (!data.actas || data.actas.length === 0) {
-          historialContenedor.innerHTML = "<p>No hay actas registradas.</p>";
-          return;
-        }
+if (historialContenedor) {
+  fetch(`${base}historial.json`)
+    .then(r => r.json())
+    .then(data => {
+      if (!data.actas || data.actas.length === 0) {
+        historialContenedor.innerHTML = "<p>No hay actas registradas.</p>";
+        return;
+      }
 
-        // Ordenar por fecha descendente
-        data.actas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+      // limpiar el contenedor para que no se duplique
+      historialContenedor.innerHTML = "";
 
-        data.actas.forEach(acta => {
-          const fechaBonita = new Date(acta.fecha).toLocaleDateString("es-ES", {
-            weekday: "long", day: "numeric", month: "long", year: "numeric"
-          });
+      // Ordenar por fecha descendente
+      data.actas.sort((a, b) => b.fecha.localeCompare(a.fecha));
 
-          const item = document.createElement("div");
-          item.className = "list-group-item d-flex justify-content-between align-items-center";
-          item.innerHTML = `
-            <div>
-              <div style="font-weight:600">${fechaBonita}</div>
-              <small class="text-muted">${acta.archivo}</small>
-            </div>
-            <div class="btn-group">
-              <a href="${base + acta.archivo}" target="_blank" class="btn btn-sm btn-primary">Ver PDF</a>
-              <a href="${base + acta.archivo}" download class="btn btn-sm btn-outline-secondary">Descargar</a>
-            </div>
-          `;
-          historialContenedor.appendChild(item);
-        });
-      })
-      .catch(err => {
-        console.error("Error cargando historial:", err);
-        historialContenedor.innerHTML = "<p>Error cargando historial.</p>";
-      });
-  }
-
-  // --- ÚLTIMA ACTA ---
-  const fechaEl = document.getElementById("ultima-fecha");
-  const vistaEl = document.getElementById("ultima-vista");
-
-  if (fechaEl && vistaEl) {
-    fetch(`${base}historial.json`)
-      .then(r => r.json())
-      .then(data => {
-        if (!data.actas || data.actas.length === 0) {
-          fechaEl.textContent = "No hay actas disponibles.";
-          return;
-        }
-
-        // Ordenar y tomar la última
-        const ultima = data.actas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha))[0];
-        const fechaBonita = new Date(ultima.fecha).toLocaleDateString("es-ES", {
+      data.actas.forEach(acta => {
+        const [yyyy, mm, dd] = acta.fecha.split("-");
+        const fechaObj = new Date(+yyyy, +mm - 1, +dd);
+        const fechaBonita = fechaObj.toLocaleDateString("es-ES", {
           weekday: "long", day: "numeric", month: "long", year: "numeric"
         });
 
-        fechaEl.textContent = `${fechaBonita} — ${ultima.archivo}`;
-        vistaEl.innerHTML = `
-          <iframe src="${base + ultima.archivo}" width="100%" height="650" style="border:1px solid #ccc;"></iframe>
+        const item = document.createElement("div");
+        item.className =
+          "list-group-item d-flex justify-content-between align-items-center";
+        item.innerHTML = `
+          <div>
+            <div style="font-weight:600">${fechaBonita}</div>
+            <small class="text-muted">${acta.archivo}</small>
+          </div>
+          <div class="icon-actas">
+            <a href="${base + acta.archivo}" target="_blank" rel="nofollow noopener" title="Ver PDF">
+              <em class="fas fa-eye"></em>
+            </a>&nbsp;
+            <a href="${base + acta.archivo}" download rel="nofollow noopener" title="Descargar PDF">
+              <em class="fas fa-download"></em>
+            </a>
+          </div>
         `;
-      })
-      .catch(err => {
-        console.error("Error cargando última acta:", err);
-        fechaEl.textContent = "Error cargando la última acta.";
+        historialContenedor.appendChild(item);
       });
-  }
+    })
+    .catch(err => {
+      console.error("Error cargando historial:", err);
+      historialContenedor.innerHTML =
+        "<p>Error cargando historial.</p>";
+    });
+}
+
+
+
+ // --- ÚLTIMA ACTA ---
+const fechaEl = document.getElementById("ultima-fecha");
+const vistaEl = document.getElementById("ultima-vista");
+
+if (fechaEl && vistaEl) {
+  fetch(`${base}historial.json`)
+    .then(r => r.json())
+    .then(data => {
+      if (!data.actas || data.actas.length === 0) {
+        fechaEl.textContent = "No hay actas disponibles.";
+        return;
+      }
+
+      // Ordenar y tomar la última
+      data.actas.sort((a, b) => b.fecha.localeCompare(a.fecha));
+      const ultima = data.actas[0];
+
+      // Parsear bien la fecha
+      const [yyyy, mm, dd] = ultima.fecha.split("-");
+      const fechaObj = new Date(+yyyy, +mm - 1, +dd);
+      const fechaBonita = fechaObj.toLocaleDateString("es-ES", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+
+      fechaEl.textContent = `${fechaBonita} — ${ultima.archivo}`;
+      vistaEl.innerHTML = `
+        <iframe src="${base + ultima.archivo}" width="100%" height="650" style="border:1px solid #ccc;"></iframe>
+      `;
+    })
+    .catch(err => {
+      console.error("Error cargando última acta:", err);
+      fechaEl.textContent = "Error cargando la última acta.";
+    });
+}
 });
-
-
-
 
 // --- Forzar que los PDF se abran en otra pestaña ---
 function targetBlankForPdfReferences() {
