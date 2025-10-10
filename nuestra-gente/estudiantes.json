@@ -38,9 +38,9 @@
     "descripcion": "Estudiante de noveno semestre de Geología en la Universidad Industrial de Santander, con intereses en hidrogeología, recursos hídricos, exploración de hidrocarburos y el manejo de Sistemas de Información Geográfica (SIG). Su motivación se centra en la investigación aplicada al entendimiento y gestión sostenible del agua, integrando herramientas geocientíficas para la solución de problemáticas ambientales.\n\nComo tesorero, gestiona el presupuesto interno, administra los recursos del semillero y se encarga de la rendición de cuentas y la transparencia financiera.",
     "foto": "/assets/img/miembros/.png",
     "links": {
-      "email": "",
-      "cvlac": "",
-      "linkedin": ""
+      "email": "oscar2212468@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002364303",
+      "linkedin": "https://www.linkedin.com/in/oscar-fonseca-3299671a6/"
     }
   },
   {
@@ -73,7 +73,7 @@
     "foto": "/assets/img/miembros/Thomas-Quinonez.jpg",
     "links": {
       "email": "thomas2230584@correo.uis.edu.co",
-      "cvlac": "",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002419352",
       "linkedin": "https://www.linkedin.com/in/thomasquiñonez"
     }
   },
@@ -98,9 +98,7 @@
       "cvlac": "",
       "linkedin": ""
     }
-  },
-  
-  
+  },  
   {
     "nombre": "Silvia Vargas Cano",
     "cargo": "Diseñadora y Creativa Gráfica",
