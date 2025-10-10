@@ -3,7 +3,7 @@
     "nombre": "David Blanco Quiroga",
     "cargo": "Líder / Presidente",
     "descripcion": "Estudiante de décimo semestre de geología con intereses académicos y profesionales se centran en la hidrogeología, la geología ambiental y el uso de Sistemas de Información Geográfica (SIG). Cuento con experiencia en el manejo de lenguajes de programación como Python (nivel básico) y R (nivel intermedio), los cuales he aplicado al análisis de datos geocientíficos. He fortalecido mis competencias en organización, liderazgo y trabajo en equipo mediante roles activos, como la creación y liderazgo del Semillero de Investigación de Sistemas Hidrológicos UIS y la organización de eventos académicos. Me he desempeñado en roles de apoyo administrativo en la Escuela de Geología de la UIS, contribuyendo en la atención a estudiantes, elaboración de documentación y apoyo logístico",
-    "foto": "/assets/img/miembros/.png",
+    "foto": "/assets/img/miembros/David-Blanco.png",
     "links": {
       "email": "david2200709@correo.uis.edu.co",
       "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002363797",
@@ -13,8 +13,8 @@
   {
     "nombre": "Johan Páez Romero",
     "cargo": "Vicepresidente",
-    "descripcion": "Estudiante de geología de décimo semestre con intereses en Hidrogeología, Exploración Geofísica, Geología Estructural y Sistemas de Información Geográfica (SIG). Cuenta con conocimientos de programación en Python.Estudiante de décimo semestre de Geología, cuyos intereses académicos y profesionales se centran en la hidrogeología, la geología ambiental y el uso de Sistemas de Información Geográfica (SIG). Cuenta con experiencia en el manejo de lenguajes de programación como Python (nivel básico) y R (nivel intermedio), los cuales aplica al análisis de datos geocientíficos. Ha fortalecido sus competencias en organización, liderazgo y trabajo en equipo mediante roles activos, como la creación y liderazgo del Semillero de Investigación de Sistemas Hidrológicos UIS y la organización de eventos académicos. Se ha desempeñado en roles de apoyo administrativo en la Escuela de Geología de la UIS, contribuyendo en la atención a estudiantes, elaboración de documentación y apoyo logístico.",
-    "foto": "/assets/img/miembros/.png",
+    "descripcion": "Estudiante de geología de décimo semestre con intereses en Hidrogeología, Exploración Geofísica, Geología Estructural y Sistemas de Información Geográfica (SIG). Cuenta con conocimientos de programación en Python.",
+    "foto": "/assets/img/miembros/Johan-Paez.jpg",
     "links": {
       "email": "johan2210631@correo.uis.edu.co",
       "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002192389",
@@ -80,7 +80,7 @@
     "nombre": "Angie Gonzalez",
     "cargo": "Vocal",
     "descripcion": "Biografía",
-    "foto": "/assets/img/miembros/.png",
+    "foto": "/assets/img/miembros/Angie-Gonzalez.png",
     "links": {
       "email": "",
       "cvlac": "",
