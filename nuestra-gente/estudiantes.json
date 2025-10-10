@@ -33,17 +33,6 @@
     }
   },
   {
-    "nombre": "Juliana Lavacude",
-    "cargo": "Tesorera",
-    "descripcion": "Biografía",
-    "foto": "/assets/img/miembros/.png",
-    "links": {
-      "email": "",
-      "cvlac": "",
-      "linkedin": ""
-    }
-  },
-  {
     "nombre": "Oscar Esteban Fonseca",
     "cargo": "Vocal",
     "descripcion": "Estudiante de noveno semestre de Geología en la Universidad Industrial de Santander, con intereses en hidrogeología, recursos hídricos, exploración de hidrocarburos y el manejo de Sistemas de Información Geográfica (SIG). Su motivación se centra en la investigación aplicada al entendimiento y gestión sostenible del agua, integrando herramientas geocientíficas para la solución de problemáticas ambientales.",
