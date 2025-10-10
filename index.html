@@ -54,20 +54,33 @@
 
     <div class="container"> 
 
-        <div class="row">      
-            <div class="col-md"> 
-                <div class="text-center my-4">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6C4ajkUXtuw?si=fxPfZI9Nz69EPI8_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
-            </div>
-            
-            <div class="col-md">
-                    <div class="mt-4"></div>
-                    <h3>Geotermia: Lecciones desde Francia para encender el potencial en Colombia</h3>
-                    <p data-block-key="fetfy">
-                    Aprende sobre la geotermia en Colombia y cómo aprovechar el calor del subsuelo de forma limpia y constante. Hablamos de geotermia superficial y profunda, cómo se extrae la energía, los riesgos y las oportunidades en volcanes, fallas y pozos petroleros inactivos. También compartimos buenas prácticas para cuidar el medio ambiente y aprovechar este recurso de manera eficiente.
-                    </p>
-            </div>
-        </div> 
+<div class="row">      
+  <div class="col-md"> 
+    <div class="text-center my-4">
+      <div class="video-responsive">
+        <iframe 
+          src="https://www.youtube.com/embed/6C4ajkUXtuw?si=fxPfZI9Nz69EPI8_" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md">
+    <div class="mt-4"></div>
+    <h3>Geotermia: Lecciones desde Francia para encender el potencial en Colombia</h3>
+    <p>
+      Aprende sobre la geotermia en Colombia y cómo aprovechar el calor del subsuelo de forma limpia y constante. 
+      Hablamos de geotermia superficial y profunda, cómo se extrae la energía, los riesgos y las oportunidades en volcanes, fallas y pozos petroleros inactivos. 
+      También compartimos buenas prácticas para cuidar el medio ambiente y aprovechar este recurso de manera eficiente.
+    </p>
+  </div>
+</div>
+
 
         <div class="mt-5"></div>
 
@@ -89,27 +102,39 @@
 
     <div id="footer-placeholder"></div>
 
-<!-- jQuery  -->
-<script src="/assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<!-- jQuery (CDN oficial) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <!-- jQuery UI -->
 <script src="/assets/jquery-ui-1.13.1/jquery-ui.min.js"></script>
 
-<!-- Popper.js -->
-<script src="/assets/js/popper-1.14.7.min.js"></script>
+<!-- Popper.js (necesario para los dropdowns de Bootstrap 4) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
 <!-- Bootstrap JS -->
-<script src="/assets/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <!-- Moment.js -->
 <script src="/assets/js/moment-2.23.0.min.js"></script>
 
+<!-- Script principal -->
 <script src="/assets/js/script.js"></script>
 
-<script src="/https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+<!-- Autocomplete (CDN) -->
+<script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+
+<!-- Accesibilidad -->
 <script src="/assets/js/accessibility-buttons.js"></script>
 
+<!-- Portal principal -->
 <script src="/assets/js/sishportal.js"></script>
+
+<!-- Inicialización de dropdowns -->
+<script>
+  $(function () {
+    $('.dropdown-toggle').dropdown();
+  });
+</script>
 
 </body>
 </html>
