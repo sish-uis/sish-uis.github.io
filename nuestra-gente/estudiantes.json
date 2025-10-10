@@ -12,7 +12,7 @@
   },
   {
     "nombre": "Johan Páez Romero",
-    "cargo": "Vicepresidente y Coordinador de Proyectos Internos",
+    "cargo": "Vicepresidente",
     "descripcion": "Estudiante de geología de décimo semestre con intereses en Hidrogeología, Exploración Geofísica, Geología Estructural y Sistemas de Información Geográfica (SIG). Cuenta con conocimientos de programación en Python.\n\nEn el semillero, asiste al líder principal y supervisa los proyectos de investigación internos, asegurando su avance técnico y cumplimiento de metas. Su rol fortalece la articulación entre los equipos y la continuidad de la gestión institucional.",
     "foto": "/assets/img/miembros/Johan-Paez.jpg",
     "links": {
@@ -91,10 +91,10 @@
   {
     "nombre": "Angie Gonzalez",
     "cargo": "Gestora de Medios Digitales (Community Manager)",
-    "descripcion": "Biografía\n\nEs responsable de ejecutar la estrategia digital del SISH, mantener las redes sociales activas, publicar contenidos y analizar las métricas de interacción para fortalecer la visibilidad del semillero.",
+    "descripcion": "Estudiante de séptimo nivel con intereses en Hidrogeología, Paleontología, Micropaleontología, Paleoceanografía e Ilustración científica\n\nEs responsable de ejecutar la estrategia digital del SISH, mantener las redes sociales activas, publicar contenidos y analizar las métricas de interacción para fortalecer la visibilidad del semillero.",
     "foto": "/assets/img/miembros/Angie-Gonzalez.JPG",
     "links": {
-      "email": "",
+      "email": "angie2211837@correo.uis.edu.co",
       "cvlac": "",
       "linkedin": ""
     }
