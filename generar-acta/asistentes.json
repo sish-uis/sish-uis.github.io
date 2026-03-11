@@ -1,10 +1,10 @@
 [
   { "nombre": "Juan Diego Colegial Gutiérrez" },
   { "nombre": "Luisa Casadiegos Agudelo" },
+  { "nombre": "Mayra Isabel Vargas Cáceres" },
   { "nombre": "David Blanco Quiroga" },
   { "nombre": "Johan Páez Romero" },
   { "nombre": "María Juliana Chacón Porras" },
-  { "nombre": "Juliana Lavacude" },
   { "nombre": "Oscar Esteban Fonseca" },
   { "nombre": "Sair Granada Garzón" },
   { "nombre": "Andrés Felipe Durán Lascarro" },
@@ -12,5 +12,11 @@
   { "nombre": "Thomás Quiñonez" },
   { "nombre": "Manuel Gonzalez" },
   { "nombre": "Silvia Vargas Cano" },
-  { "nombre": "María Paula Roa Archila" }
+  { "nombre": "María Paula Roa Archila" },
+  { "nombre": "Laura Marcela Céspedes Gómez" },
+  { "nombre": "Alan Nicolas Guzman Cudris" },
+  { "nombre": "Kesly Sofía Serrano Monsalve" },
+  { "nombre": "Maria Fernanda Ariza Sandoval" },
+  { "nombre": "Caleb Santiago Rivera Castellanos" },
+  { "nombre": "Ana Maria Calderón Guzmán" }
 ]
