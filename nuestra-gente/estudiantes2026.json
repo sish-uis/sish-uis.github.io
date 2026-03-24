@@ -1,0 +1,174 @@
+[
+  {
+    "nombre": "María Juliana Chacón Porras",
+    "cargo": "Estudiante líder",
+"descripcion": "Estudiante de geología de séptimo semestre con intereses en la geofísica, la hidrogeología, la geología ambiental y la geología estructural. Cuenta con habilidades en programación usando Python (nivel intermedio), aplicadas a la teledetección, el modelamiento numérico, el análisis de datos y la estadística multivariable.\n\nComo líder del SISH, coordina la ejecución diaria de las actividades, modera las reuniones del equipo y garantiza el cumplimiento de los objetivos institucionales. Se encarga de articular el trabajo entre los miembros, promoviendo un ambiente de colaboración y aprendizaje constante. Se caracteriza por su liderazgo, organización y compromiso con la gestión colectiva del conocimiento, impulsando iniciativas que fortalecen el enfoque hidrogeológico y la divulgación científica.",    "foto": "/assets/img/miembros/Juliana-Chacon.jpeg",
+    "links": {
+      "email": "maria2230597@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002277361",
+      "linkedin": "https://www.linkedin.com/in/maría-juliana-chacón-porras-ba9b7326a"
+    }
+  },
+  {
+    "nombre": "David Blanco Quiroga",
+    "cargo": "Coordinador",
+    "descripcion": "Estudiante de décimo semestre de geología con intereses académicos y profesionales que se centran en la hidrogeología, la geología ambiental y el uso de Sistemas de Información Geográfica (SIG). Cuenta con experiencia en el manejo de lenguajes de programación como Python (nivel básico) y R (nivel intermedio), los cuales ha aplicado al análisis de datos geocientíficos. Ha fortalecido sus competencias en organización, liderazgo y trabajo en equipo mediante roles activos, como la creación y liderazgo del Semillero de Investigación de Sistemas Hidrológicos UIS y la organización de eventos académicos. Se ha desempeñado en roles de apoyo administrativo en la Escuela de Geología de la UIS, contribuyendo en la atención a estudiantes, elaboración de documentación y apoyo logístico.\n\nComo presidente del semillero, coordina la ejecución diaria de las actividades, modera las reuniones y vela por el cumplimiento de los objetivos institucionales. Destaca por su liderazgo, organización y compromiso con la gestión colaborativa del conocimiento.",
+    "foto": "/assets/img/miembros/David-Blanco.png",
+    "links": {
+      "email": "david2200709@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002363797",
+      "linkedin": "https://www.linkedin.com/in/david-blanco-quiroga-111a87385"
+    }
+  },
+  {
+    "nombre": "Sair Granada Garzón",
+    "cargo": "Estudiante Sublider",
+    "descripcion": "Estudiante de geología de noveno semestre con intereses en Hidrogeología, Teledetección y Geociencias Computacionales. Cuenta con conocimientos en programación en Python y Java, además de desarrollo de aplicaciones web.\n\nEs el responsable del mantenimiento y actualización de la página web del semillero, optimizando los recursos digitales y garantizando su accesibilidad y funcionalidad técnica.",
+    "foto": "/assets/img/miembros/Sair-Granada.jpg",
+    "links": {
+      "email": "sair2212451@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002192403",
+      "linkedin": "https://www.linkedin.com/in/sairgranada"
+    }
+  },
+  {
+    "nombre": "Manuel González Rodríguez",
+    "cargo": "Secretario y Coordinador de Proyectos Especiales 1",
+    "descripcion": "",
+    "foto": "/assets/img/miembros/Manuel-Gonzalez.png",
+    "links": {
+      "email": "manuel2230590@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002418997",
+      "linkedin": "https://www.linkedin.com/in/manuel-gonzalez-552396273"
+    }
+  },
+  {
+    "nombre": "Oscar Esteban Fonseca Pérez",
+    "cargo": "Tesorero",
+    "descripcion": "",
+    "foto": "/assets/img/miembros/Esteban-Fonseca.png",
+    "links": {
+      "email": "oscar2212468@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002364303",
+      "linkedin": "https://www.linkedin.com/in/oscar-fonseca-3299671a6/"
+    }
+  },
+  {
+    "nombre": "Silvia Vargas Cano",
+    "cargo": "Diseñadora y Creativa Gráfica",
+"descripcion": "Estudiante de séptimo semestre de Geología con intereses en Sedimentología, Estratigrafía, Hidrogeología y Sistemas de Información Geográfica (SIG). Cuenta con conocimientos en la creación y edición de material audiovisual y el manejo de redes sociales.\n\nEn su rol, diseña los materiales visuales del semillero (infografías, pósters, plantillas y contenido gráfico), aportando creatividad y coherencia visual a la comunicación científica. Además, se encarga del manejo del canal de difusión en WhatsApp del semillero y de la publicación de las actividades realizadas en la cuenta de Instagram.",    "foto": "/assets/img/miembros/Silvia-Vargas.jpg",
+    "links": {
+      "email": "silvia2231169@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002419000",
+      "linkedin": "https://www.linkedin.com/in/silvia-alejandra-vargas-cano-a61057358"
+    }
+  },
+  {
+    "nombre": "Andrés Felipe Durán Lascarro",
+    "cargo": "Coordinador de Proyectos Especiales 2",
+    "descripcion": "",
+    "foto": "/assets/img/miembros/Andres-Duran.jpg",
+    "links": {
+      "email": "andres2220905@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002419367",
+      "linkedin": "https://www.linkedin.com/in/andr%C3%A9s-felipe-dur%C3%A1n-lascarro-685584385/"
+    }
+  },
+  {
+    "nombre": "María Paula Roa Archila",
+    "cargo": "Jefa de Contenido y Narrativa",
+    "descripcion": "",
+    "foto": "/assets/img/miembros/Maria-Paula-Roa-Archila.jpeg",
+    "links": {
+      "email": "maria2230564@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002419295",
+      "linkedin": "https://www.linkedin.com/in/maria-paula-roa-archila-91a216260"
+    }
+  },
+  {
+    "nombre": "Thomás Quiñonez",
+    "cargo": "Gestor de Fondos Externos y Enlace Interinstitucional",
+"descripcion": "Estudiante de séptimo semestre de Geología con intereses en Geología Estructural, Geofísica, Hidrogeología y la implementación de Sistemas de Información Geográfica (SIG).\n\nSu doble rol en el semillero combina la búsqueda y gestión de recursos externos (convocatorias, becas y alianzas) con la creación de vínculos estratégicos entre el SISH y otros grupos de investigación, empresas o instituciones académicas.",    "foto": "/assets/img/miembros/Thomas-Quinonez.jpg",
+    "links": {
+      "email": "thomas2230584@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002419352",
+      "linkedin": "https://www.linkedin.com/in/thomasquiñonez"
+    }
+  },
+  {
+    "nombre": "Angie Katherine González Calderon",
+    "cargo": "Gestora de Medios Digitales (Community Manager)",
+"descripcion": "Estudiante de séptimo nivel con intereses en Hidrogeología, Paleontología, Micropaleontología, Paleoceanografía e Ilustración científica.\n\nEs responsable de ejecutar la estrategia digital del SISH, mantener las redes sociales activas, publicar contenidos y analizar las métricas de interacción para fortalecer la visibilidad del semillero.",    "foto": "/assets/img/miembros/Angie-Gonzalez.JPG",
+    "links": {
+      "email": "angie2211837@correo.uis.edu.co",
+      "cvlac": "",
+      "linkedin": ""
+    }
+  }, 
+  {
+    "nombre": "Kesly Sofía Serrano Monsalve",
+    "cargo": "Vocal",
+    "descripcion": "",
+    "foto": "/assets/img/miembros/Kesly-Sofía.heif",
+    "links": {
+      "email": "kesly2231109@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002453942",
+      "linkedin": "https://www.linkedin.com/in/sofia-serrano-24a0013b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+    }
+  },
+  {
+    "nombre": "Alan Nicolas Guzman Cudris ",
+    "cargo": "Vocal",
+    "descripcion": "",
+    "foto": "/assets/img/miembros/Alan-Guzman.JPG",
+    "links": {
+      "email": "alan2220903@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002453777",
+      "linkedin": "https://www.linkedin.com/in/aguzcu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+    }
+  },
+  {
+    "nombre": "Laura Marcela Céspedes Gómez",
+    "cargo": "Vocal",
+    "descripcion": "",
+    "foto": "/assets/img/miembros/Laura-Cespedes.jpeg",
+    "links": {
+      "email": "laura2211771@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002453692",
+      "linkedin": "www.linkedin.com/in/laura-marcela-céspedes-4b6233209"
+    }
+  },
+  {
+    "nombre": "Caleb Santiago Rivera Castellanos ",
+    "cargo": "Vocal",
+    "descripcion": "",
+    "foto": "/assets/img/miembros/Caleb-Rivera.jpeg",
+    "links": {
+      "email": "caleb2232219@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002127197",
+      "linkedin": "https://www.linkedin.com/in/caleb-santiago-rivera-castellanos-9ab0423b1 "
+    }
+  },
+  {
+    "nombre": "Ana Maria Calderón Guzmán",
+    "cargo": "Vocal",
+    "descripcion": "",
+    "foto": "/assets/img/miembros/Ana-Calderon.jpeg",
+    "links": {
+      "email": "ana22141861@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002454310#red_identificadores",
+      "linkedin": "https://www.linkedin.com/in/ana-maria-4aa6ba197"
+    }
+  },
+  {
+    "nombre": "Maria Fernanda Ariza Sandoval",
+    "cargo": "Vocal",
+    "descripcion": "",
+    "foto": "/assets/img/miembros/Fernanda-Ariza.jpg",
+    "links": {
+      "email": "maria2232933@correo.uis.edu.co",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002454366",
+      "linkedin": "www.linkedin.com/in/maria-fernanda-ariza-27b5633b1"
+    }
+  }
+]
