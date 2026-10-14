@@ -1,72 +1,42 @@
-    <!-- Header -->
-    <nav class="d-none d-sm-block" aria-label="Barra de navegación de menú">
-                <div class="container">
-                        <div class="row my-2">
-                            <div class="col">
-                                <a href="/">
-                                    <img class="sish-logo" src="/assets/img/uis77.png" alt="UIS">
-                                </a>
-                            </div>
-                            <div class="col-md-auto">
-                                <a href="/">
-                                    <img class="sish-logo" src="/assets/img/sish-horizontal.png" alt="SISH">
-                                </a>
-                            </div>
-                        </div>
-                </div>
-    </nav>
-    <!-- Logo del semillero visible solo en pantallas pequeñas -->
-<div class="logo-responsive-sish text-center py-2 d-lg-none">
-  <a href="/">
-    <img src="/assets/img/sish-horizontal.png" alt="Semillero de Investigación de Sistemas Hidrológicos UIS" class="img-fluid sish-logo-responsive">
-  </a>
-</div>
+<!-- Header -->
+<header class="sish-header" id="sishHeader">
+  <nav class="navbar navbar-expand-lg sish-navbar" id="menuPrincipal" aria-label="Menú principal">
+    <div class="container">
+      <a class="navbar-brand sish-brand" href="/">
+        <img src="/assets/img/sish-individual.svg" alt="" class="sish-brand-mark">
+        <span class="sish-brand-text">
+          <strong>SISH</strong>
+          <small>Sistemas Hidrológicos · UIS</small>
+        </span>
+      </a>
 
-    <div class="overall">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="menuPrincipal">
-        <div class="container">
-            <!-- Botón responsive -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+      <button class="navbar-toggler sish-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
 
-            <!-- Menú -->
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav mx-auto">
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ml-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
 
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="/">Inicio</a>
-                    </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="nosotrosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Conócenos</a>
+            <ul class="dropdown-menu" aria-labelledby="nosotrosDropdown">
+              <li><a class="dropdown-item" href="/quienes-somos/">¿Quiénes somos?</a></li>
+              <li><a class="dropdown-item" href="/filosofia-institucional/">Filosofía Institucional</a></li>
+              <li><a class="dropdown-item" href="/nuestra-gente/">Nuestra gente</a></li>
+            </ul>
+          </li>
 
-                    <li class="nav-item dropdown px-3">
-                        <a class="nav-link dropdown-toggle" href="#" id="nosotrosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Conócenos
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="nosotrosDropdown">
-                            <li><a class="dropdown-item" href="/quienes-somos/">¿Quiénes somos?</a></li>
-                            <li><a class="dropdown-item" href="/filosofia-institucional/">Filosofía Institucional</a></li>
-                            <li><a class="dropdown-item" href="/nuestra-gente/">Nuestra gente</a></li>
-                        </ul>
-                    </li>
-
-
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="/proyectos-extension/">Proyectos de Extensión</a>
-                    </li>
-
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="/webinarios/">Webinarios</a>
-                    </li>
-                    
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="/geoportal/">Geoportal SISH</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+          <li class="nav-item"><a class="nav-link" href="/proyectos-extension/">Proyectos de Extensión</a></li>
+          <li class="nav-item"><a class="nav-link" href="/webinarios/">Webinarios</a></li>
+          <li class="nav-item d-none d-lg-block">
+            <a href="https://www.uis.edu.co/" target="_blank" rel="noopener" class="sish-uis-logo"><img src="/assets/img/uis77.png" alt="Universidad Industrial de Santander"></a>
+          </li>
+        </ul>
+      </div>
     </div>
-<div class="blue-bar"></div>
+  </nav>
+</header>
 
 <!-- Mascota flotante -->
 <div class="mascota-flotante">

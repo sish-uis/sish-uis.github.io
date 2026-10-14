@@ -533,9 +533,6 @@ if (document.getElementById("formulario-acta")) {
 }
 
   // --- Cargar docentes y estudiantes ---
-  cargarEquipo("/nuestra-gente/docentes2026.json", "docentes");
-  cargarEquipo("/nuestra-gente/estudiantes2026.json", "estudiantes");
-  cargarEquipo("/nuestra-gente/externos2026.json", "externos");
 });
 
 document.addEventListener("DOMContentLoaded", () => {

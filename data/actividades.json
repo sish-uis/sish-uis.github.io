@@ -1,0 +1,451 @@
+{
+  "_instrucciones": "Cada bloque { ... } es una actividad. 'fechaFin' (AAAA-MM-DD) sirve para ordenar y para marcar 'Próximamente' si aún no ha pasado. 'imagenes' es una lista de rutas; si la dejas vacía [] sale una imagen genérica. 'descripcion' es una lista de párrafos.",
+  "intro": [
+    "El semillero ha desarrollado proyectos de extensión enfocados en fortalecer el conocimiento hidrogeológico en estudiantes de colegio y universitarios. Entre estas actividades se incluyen charlas, talleres prácticos de campo, análisis de muestras de agua y demostraciones experimentales, con el objetivo de acercar de manera dinámica los conceptos de geología ambiental y gestión sostenible del recurso hídrico.",
+    "Estas iniciativas permiten consolidar espacios de formación continua, fomentar la apropiación del conocimiento científico y promover habilidades prácticas y pensamiento crítico, integrando a la comunidad educativa con los procesos de investigación y divulgación de la universidad."
+  ],
+  "destacado": {
+    "titulo": "Charlas y Webinarios",
+    "descripcion": [
+      "Espacios de divulgación científica abiertos al público, con ponentes nacionales e internacionales. Consulta todas las grabaciones y próximos eventos en:"
+    ],
+    "imagenes": [
+      "/proyectos-extension/img/webinar1.jpg",
+      "/proyectos-extension/img/webinar2.webp",
+      "/proyectos-extension/img/webinar3.webp"
+    ],
+    "enlace": "/webinarios/",
+    "enlace_texto": "Ver webinarios"
+  },
+  "actividades": [
+    {
+      "titulo": "Salida de campo: Sistema Geotérmico de Paipa",
+      "categoria": "Salida de campo",
+      "fecha": "18 y 19 de octubre de 2026",
+      "fechaFin": "2026-10-19",
+      "lugar": "Paipa, Boyacá",
+      "descripcion": [
+        "Salida pedagógica de dos días entre Bucaramanga y Paipa para conocer en campo el sistema geotérmico de Paipa y su relación con el agua subterránea."
+      ],
+      "instructor": "MSc. Jesús Bernardo Rueda Gutiérrez (presidente de AGEOCOL)",
+      "imagenes": [],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Taller de Geoeducación en Hidrogeología con colegios",
+      "categoria": "Taller",
+      "fecha": "18 de septiembre, 1 y 16 de octubre de 2026",
+      "fechaFin": "2026-10-16",
+      "lugar": "Institución Educativa de Santander · INEM Custodio García Rovira · Colegio Los Cedros",
+      "descripcion": [
+        "Jornadas con estudiantes de colegio organizadas en nueve estaciones rotativas: geología general, tipos de roca, fósiles, minerales, transición energética, ciclo del agua, calidad del agua, modelos hidrogeológicos e hidrogeología.",
+        "El objetivo es acercar de forma lúdica las ciencias de la tierra a los estudiantes y sensibilizarlos sobre la importancia del recurso hídrico."
+      ],
+      "instructor": "Miembros SISH y estudiantes de Geología",
+      "imagenes": [],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Curso: Mezcla de agua subterránea con el código MIX",
+      "categoria": "Curso",
+      "fecha": "17 y 24 de septiembre, 1, 8 y 14 de octubre de 2026",
+      "fechaFin": "2026-10-14",
+      "lugar": "Edificio Jorge Bautista Vesga (JBV), UIS",
+      "descripcion": [
+        "Curso realizado junto con la Universidad Nacional de Colombia sobre procesos de mezcla en aguas subterráneas: conceptualización hidrogeoquímica, diagramas hidroquímicos, análisis de miembros extremos (EMMA) e introducción y aplicación del código MIX con bases de datos reales."
+      ],
+      "instructor": "SISH y UNAL",
+      "imagenes": [],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Conversatorio: Hidrogeología en la transición energética y la geología económica",
+      "categoria": "Conversatorio",
+      "fecha": "5 de octubre de 2026",
+      "fechaFin": "2026-10-05",
+      "lugar": "Panel virtual",
+      "descripcion": [
+        "Panel virtual con invitados externos sobre el papel de la hidrogeología en la transición energética y en la geología económica, con espacio para preguntas del público."
+      ],
+      "instructor": "Modera: María Juliana Chacón. Invitados: Carlos Ángel y Elkin Hernández",
+      "imagenes": [],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Taller: Investigación y gestión del recurso hídrico en Santander",
+      "categoria": "Taller",
+      "fecha": "3 de octubre de 2026",
+      "fechaFin": "2026-10-03",
+      "lugar": "Edificio Jorge Bautista Vesga (JBV), UIS",
+      "descripcion": [
+        "Los miembros del semillero presentaron sus investigaciones: recarga de acuíferos en la cuenca del río Fonce y en la Mesa de los Santos, calidad del agua en la cuenca media del río de Oro, erosión hídrica en la cuenca Panamá y los resultados del Hidrogeodía 2026."
+      ],
+      "instructor": "Miembros SISH",
+      "imagenes": [],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Charla: Geotermia e hidrogeología",
+      "categoria": "Charla",
+      "fecha": "25 de septiembre de 2026",
+      "fechaFin": "2026-09-25",
+      "lugar": "Edificio Jorge Bautista Vesga (JBV), UIS",
+      "descripcion": [
+        "Charla sobre la relación entre el agua subterránea, el calor de la Tierra y los procesos que permiten comprender y aprovechar la geotermia: qué es, sus funciones y aplicaciones, y su vínculo con la hidrogeología."
+      ],
+      "instructor": "PhD. Dayana Andrea Schonwalder",
+      "imagenes": [],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Charla: Mojabilidad en yacimientos de hidrocarburos",
+      "categoria": "Charla",
+      "fecha": "18 de septiembre de 2026",
+      "fechaFin": "2026-09-18",
+      "lugar": "Edificio Jorge Bautista Vesga (JBV), UIS",
+      "descripcion": [
+        "Introducción a cómo las propiedades de la roca y su interacción con el agua, el petróleo y el gas influyen en la distribución y el movimiento de los fluidos dentro del yacimiento: formación del crudo, propiedades fisicoquímicas y fenómenos en la interfase líquido-sólido."
+      ],
+      "instructor": "PhD. Victoria Mousalli",
+      "imagenes": [],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Planteamiento: notas de clase de laboratorios de hidrogeología",
+      "categoria": "Publicación",
+      "fecha": "2025",
+      "fechaFin": "2025-12-01",
+      "lugar": "",
+      "descripcion": [
+        "Se realizó un avance en la recopilación y organización de notas de clase correspondientes a los laboratorios de Hidrogeología, incluyendo conceptos básicos, procedimientos utilizados en laboratorio y explicaciones relacionadas con el comportamiento y análisis de las aguas subterráneas, como fase preliminar para construir un material de apoyo académico más completo."
+      ],
+      "instructor": "",
+      "imagenes": [
+        "/proyectos-extension/img/manual.jpg"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Modelación Hidrológica con SWAT+",
+      "categoria": "Curso",
+      "fecha": "24 y 31 de octubre, y 7 y 14 de noviembre de 2025",
+      "fechaFin": "2025-11-14",
+      "lugar": "",
+      "descripcion": [
+        "Curso práctico enfocado en el uso de SWAT+ para la modelación hidrológica, desde los fundamentos teóricos hasta la aplicación a escala de cuenca, abordando el ciclo del agua, el balance hídrico y la interacción entre procesos superficiales y subterráneos."
+      ],
+      "instructor": "Sandra Blanco",
+      "imagenes": [
+        "/proyectos-extension/img/SWAT.jpg"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Geoferia en el marco de la 5ta semana de la geofísica",
+      "categoria": "Evento",
+      "fecha": "7 de noviembre de 2025",
+      "fechaFin": "2025-11-07",
+      "lugar": "",
+      "descripcion": [
+        "La participación se llevó a cabo con el objetivo de socializar el propósito del semillero a los demás estudiantes de Geología y asistentes, recalcando su identidad como grupo de investigación y divulgación junto con todas las actividades ya realizadas. Además, se llevó una caja con diferentes rocas para mostrar la infiltración."
+      ],
+      "instructor": "",
+      "imagenes": [
+        "/proyectos-extension/img/Geoferia1.jpg",
+        "/proyectos-extension/img/Geoferia2.jpg"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Participación en el evento de divulgación científica CienTioN",
+      "categoria": "Evento",
+      "fecha": "30 de octubre de 2025",
+      "fechaFin": "2025-10-30",
+      "lugar": "",
+      "descripcion": [
+        "Los estudiantes encargados desarrollaron una ponencia en la Universidad Autónoma de Bucaramanga (UNAB) con base en los resultados de la salida de campo, donde se evaluaron parámetros fisicoquímicos y microbiológicos de estaciones a lo largo de la cuenca media del Río de Oro, y se calcularon los índices de calidad ICA e ICOMO para evaluar el estado de salud de la cuenca."
+      ],
+      "instructor": "",
+      "imagenes": [],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Socialización “Evaluación de Parámetros Fisicoquímicos y Microbiológicos como Indicadores de la Calidad del Agua en la Cuenca Media del Río del Oro”",
+      "categoria": "Charla",
+      "fecha": "28 de octubre de 2025",
+      "fechaFin": "2025-10-28",
+      "lugar": "",
+      "descripcion": [
+        "Se expusieron diapositivas a los miembros del semillero, de la Escuela de Geología y a la comunidad universitaria en general, para luego recibir una retroalimentación del público sobre los aspectos a mejorar para la presentación final en la UNAB durante el evento CienTioN."
+      ],
+      "instructor": "",
+      "imagenes": [
+        "/proyectos-extension/img/socializacion1.webp",
+        "/proyectos-extension/img/socializacion2.jpg",
+        "/proyectos-extension/img/socializacion3.jpg"
+      ],
+      "videos": [
+        "/proyectos-extension/img/socializacion4.mp4"
+      ],
+      "enlace": ""
+    },
+    {
+      "titulo": "II encuentro de semilleros de la Escuela de Geología",
+      "categoria": "Evento",
+      "fecha": "27 de octubre de 2025",
+      "fechaFin": "2025-10-27",
+      "lugar": "",
+      "descripcion": [
+        "Se socializó con la comunidad de la Escuela de Geología los cursos, charlas, proyectos de apropiación social del conocimiento, salidas de campo y participación en congresos del semillero a lo largo del 2025."
+      ],
+      "instructor": "",
+      "imagenes": [
+        "/proyectos-extension/img/encuentro1.jpg",
+        "/proyectos-extension/img/encuentro2.jpg"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Entre rocas, historia y comunidad: Barichara",
+      "categoria": "Taller",
+      "fecha": "16 y 17 de octubre de 2025",
+      "fechaFin": "2025-10-17",
+      "lugar": "",
+      "descripcion": [
+        "Durante el primer día compartimos con estudiantes del Instituto Técnico Aquileo Parra. Mediante la actividad de “Pasaporte Geológico”, compartimos de forma lúdica conocimientos para aprender sobre geología general e hidrogeología a través de juegos y retos interactivos",
+        "El segundo día recorrimos el Camino del Lenguerke, reconociendo la geología, historia y patrimonio natural. Una experiencia enriquecedora que fortaleció el vínculo entre la hidrogeología, la comunidad y el territorio."
+      ],
+      "instructor": "",
+      "imagenes": [
+        "/proyectos-extension/img/bari1.jpg",
+        "/proyectos-extension/img/bari2.jpg",
+        "/proyectos-extension/img/bari3.jpg",
+        "/proyectos-extension/img/bari4.jpg",
+        "/proyectos-extension/img/bari5.jpg"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "VI encuentro de museos y colecciones geológicas y paleontológicas",
+      "categoria": "Evento",
+      "fecha": "12 de octubre de 2025",
+      "fechaFin": "2025-10-12",
+      "lugar": "",
+      "descripcion": [
+        "La participación se llevó a cabo con el objetivo de socializar el semillero a la comunidad en general, recalcando su identidad como grupo de investigación y divulgación, junto con todas las actividades ya realizadas y una exposición de muestras propias para enseñar a la comunidad acerca de las rocas y de la hidrogeología y su importancia."
+      ],
+      "instructor": "",
+      "imagenes": [
+        "/proyectos-extension/img/servicio.jpg"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Taller: Análisis de Precipitación y Cuencas Hidrográficas",
+      "categoria": "Taller",
+      "fecha": "11 de octubre de 2025",
+      "fechaFin": "2025-10-11",
+      "lugar": "",
+      "descripcion": [
+        "Taller práctico enfocado en la delimitación de cuencas, el cálculo de parámetros morfométricos y el análisis de la precipitación mediante el uso de herramientas accesibles y datos reales."
+      ],
+      "instructor": "",
+      "imagenes": [
+        "/proyectos-extension/img/cuencas-post.jpg",
+        "/proyectos-extension/img/cuencas-1.webp",
+        "/proyectos-extension/img/cuencas-2.webp",
+        "/proyectos-extension/img/cuencas-3.webp",
+        "/proyectos-extension/img/cuencas-4.webp",
+        "/proyectos-extension/img/cuencas-5.webp",
+        "/proyectos-extension/img/cuencas-6.webp"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Modelamiento hidrogeológico con Python: FloPy",
+      "categoria": "Curso",
+      "fecha": "5, 12, 19 y 26 de septiembre de 2025",
+      "fechaFin": "2025-09-26",
+      "lugar": "",
+      "descripcion": [
+        "Curso aplicado sobre modelado de flujo subterráneo con Python y FloPy, desde la generación del modelo hasta la interpretación de resultados."
+      ],
+      "instructor": "M. en C. Juan Camilo Montaño Caro",
+      "imagenes": [
+        "/proyectos-extension/img/curso3.jpg"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Salida de Campo 2025-II",
+      "categoria": "Salida de campo",
+      "fecha": "29 de agosto de 2025",
+      "fechaFin": "2025-08-29",
+      "lugar": "",
+      "descripcion": [
+        "Exploración hidrogeológica aplicada en la cuenca del Río de Oro, con análisis de parámetros de campo, piezometría y caracterización de acuíferos."
+      ],
+      "instructor": "",
+      "imagenes": [
+        "/proyectos-extension/img/salida0.webp",
+        "/proyectos-extension/img/salida1.jpg",
+        "/proyectos-extension/img/salida2.jpg",
+        "/proyectos-extension/img/salida3.jpg"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Poster Inventario de puntos de contaminación asociado al sistema acuífero de Yopal, con énfasis en el corregimiento de El Taladro en el XX Congreso Colombiano de Geología",
+      "categoria": "Congreso",
+      "fecha": "13 al 15 de agosto de 2025",
+      "fechaFin": "2025-08-15",
+      "lugar": "",
+      "descripcion": [
+        "Participación en modalidad póster en el XX Congreso Colombiano de Geología 2025 realizado en Cali. Se socializó el trabajo desarrollado desde el Semillero de Investigación en Sistemas Hidrológicos (SISH) con relación a la tesis de pregrado sobre el inventario de puntos de contaminación asociado al sistema acuífero de Yopal, compartiendo resultados, metodología aplicada y relevancia para identificar zonas críticas en la gestión del recurso hídrico."
+      ],
+      "instructor": "",
+      "imagenes": [
+        "/proyectos-extension/img/xx_congreso.jpg"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Práctica y manejo de la calidad del agua potable",
+      "categoria": "Charla",
+      "fecha": "26 de julio de 2025",
+      "fechaFin": "2025-07-26",
+      "lugar": "",
+      "descripcion": [
+        "Charla virtual en la que la geóloga Sonia Güiza González compartió sus conocimientos sobre normas y criterios de salubridad para el agua potable, métodos de muestreo en ríos y quebradas, análisis e interpretación de resultados, manejo de datos y su relación con la geología."
+      ],
+      "instructor": "",
+      "imagenes": [
+        "/proyectos-extension/img/sonia2.jpg"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Agua, componente fundamental en estudios de química ambiental",
+      "categoria": "Charla",
+      "fecha": "12 de julio de 2025",
+      "fechaFin": "2025-07-12",
+      "lugar": "",
+      "descripcion": [
+        "La charla se dio de manera virtual y la geóloga Sonia Güiza González compartió sus conocimientos sobre el agua como indicador clave en calidad ambiental, métodos de muestreo y análisis químico en fuentes naturales."
+      ],
+      "instructor": "",
+      "imagenes": [
+        "/proyectos-extension/img/sonia.jpg"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Modelamiento Numérico de Aguas Subterráneas - MODFLOW",
+      "categoria": "Curso",
+      "fecha": "24, 25 y 26 de junio de 2025",
+      "fechaFin": "2025-06-26",
+      "lugar": "",
+      "descripcion": [
+        "Curso intensivo sobre fundamentos, construcción, calibración y simulación de modelos de flujo subterráneo usando MODFLOW."
+      ],
+      "instructor": "Ph(c). Carlos Felipe Marín",
+      "imagenes": [
+        "/proyectos-extension/img/curso1.jpg"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Participación en el VIII Congreso Colombiano de Hidrogeología",
+      "categoria": "Congreso",
+      "fecha": "22 de mayo de 2025",
+      "fechaFin": "2025-05-22",
+      "lugar": "",
+      "descripcion": [
+        "Se participó en modalidad de póster, socializando la experiencia del Hidrogeodía desarrollada en el departamento de Santander. Durante la presentación se expuso la metodología empleada, los resultados obtenidos y la proyección a futuro de esta iniciativa como estrategia de educación y sensibilización sobre la importancia de las aguas subterráneas."
+      ],
+      "instructor": "",
+      "imagenes": [
+        "/proyectos-extension/img/vii_congreso.jpg"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Impacto del Hidrogeodía como estrategia de sensibilización sobre las aguas subterráneas en Santander – Colombia",
+      "categoria": "Charla",
+      "fecha": "16 de mayo de 2025",
+      "fechaFin": "2025-05-16",
+      "lugar": "",
+      "descripcion": [
+        "La charla se realizó de manera presencial, socializando la experiencia del Hidrogeodía, desde la metodología empleada hasta los resultados obtenidos y la visión futura de esta actividad. Además, se usó como simulacro para la presentación del póster de esta temática en el VIII Congreso Colombiano de Hidrogeología."
+      ],
+      "instructor": "",
+      "imagenes": [
+        "/proyectos-extension/img/impacto.jpg"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Hidrogeodía 2025: Innovación en Acción",
+      "categoria": "Evento",
+      "fecha": "23 y 24 de marzo de 2025",
+      "fechaFin": "2025-03-24",
+      "lugar": "",
+      "descripcion": [
+        "Destacada participación en el primer Hidrogeodía en Colombia, con actividades en Bucaramanga, San Vicente de Chucurí y el concurso Hidroclick, integrando ciencia, comunidad y exploración hidrogeológica."
+      ],
+      "instructor": "",
+      "imagenes": [
+        "/proyectos-extension/img/bucaramanga.jpg",
+        "/proyectos-extension/img/bucaramanga2.jpg",
+        "/proyectos-extension/img/bucaramanga3.jpg",
+        "/proyectos-extension/img/bucaramanga4.jpg",
+        "/proyectos-extension/img/san_vicente1.jpg",
+        "/proyectos-extension/img/san_vicente2.jpg",
+        "/proyectos-extension/img/san_vicente3.jpg",
+        "/proyectos-extension/img/concurso_hidroclick.jpg",
+        "/proyectos-extension/img/actividades_post_campo.jpg"
+      ],
+      "videos": [],
+      "enlace": ""
+    },
+    {
+      "titulo": "Modelado de Aguas Subterráneas con FEFLOW",
+      "categoria": "Curso",
+      "fecha": "7 y 8 de marzo de 2025",
+      "fechaFin": "2025-03-08",
+      "lugar": "",
+      "descripcion": [
+        "Curso práctico de modelado numérico tridimensional de acuíferos, enfocado en calibración, transporte y gestión hidrogeológica."
+      ],
+      "instructor": "Ph(c). Walter Antolínez",
+      "imagenes": [
+        "/proyectos-extension/img/curso2.webp"
+      ],
+      "videos": [],
+      "enlace": ""
+    }
+  ]
+}

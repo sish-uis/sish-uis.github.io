@@ -29,6 +29,11 @@
     <!-- Estilos adicionales de ANH -->
     <link rel="stylesheet" href="/assets/css/agenti.styleColors.css" type="text/css">
     <link rel="stylesheet" href="/assets/css/agenti.style.css" type="text/css">
+    <!-- Estilo moderno SISH (va de último para mandar sobre lo anterior) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap">
+    <link rel="stylesheet" href="/assets/css/sish-modern.css">
 </head>
 
 
@@ -67,27 +72,14 @@
       <!-- Contenido principal -->
 <div class="col">
   <section class="my-2">
-    <!-- Título principal con rayita -->
-    <h1 class="mb-2 pb-2" style="border-bottom: 1px solid #cfcfcf;">
-      Nuestra gente
-    </h1>
-
-    <p class="mt-3 mb-4">
+    <h1>Nuestra gente</h1>
+    <p class="mt-3 mb-2">
       En el Semillero de Investigación en Sistemas Hidrológicos (SISH - UIS) contamos con un equipo diverso de docentes y estudiantes comprometidos con la investigación, la docencia y la divulgación del conocimiento en hidrogeología. Cada miembro aporta sus habilidades y experiencia para fortalecer nuestras actividades académicas, proyectos y eventos científicos.
     </p>
-
-    <!-- Subtítulo docentes -->
-    <h2 class="mt-2 mb-3">Docentes</h2>
-    <div class="row g-4" id="docentes"></div>
-
-    <!-- Subtítulo estudiantes -->
-    <h2 class="mt-2 mb-3">Estudiantes de pregrado</h2>
-    <div class="row g-4" id="estudiantes"></div>
-
-    <!-- Subtítulo Externos -->
-    <h2 class="mt-2 mb-3">Acompañamiento Externo</h2>
-    <div class="row g-4" id="externos"></div>
-  </section>
+    <!-- El equipo se carga desde /data/integrantes.json -->
+    <div id="equipo"><div class="sish-loading"><span></span></div></div>
+  
+</section>
 </div>
 
 
@@ -132,5 +124,7 @@
     $('.dropdown-toggle').dropdown();
   });
 </script>
+<script src="/assets/js/sish-data.js"></script>
+<script src="/assets/js/sish-modern.js"></script>
 </body>
 </html>

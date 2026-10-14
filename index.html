@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,275 +46,100 @@
     <!-- Estilos adicionales -->
     <link rel="stylesheet" href="/assets/css/agenti.styleColors.css" type="text/css">
     <link rel="stylesheet" href="/assets/css/agenti.style.css" type="text/css">
+    <!-- Estilo moderno SISH (va de último para mandar sobre lo anterior) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap">
+    <link rel="stylesheet" href="/assets/css/sish-modern.css">
 </head>
-
-
 
 <body>
     <div id="header-placeholder"></div>
 
-    <div class="container"> 
-
-<div class="row">      
-  <div class="col-md"> 
-    <div class="text-center my-4">
-      <div class="video-responsive">
-        <iframe 
-          src="https://www.youtube.com/embed/6C4ajkUXtuw?si=fxPfZI9Nz69EPI8_" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowfullscreen>
-        </iframe>
+    <!-- HERO -->
+    <section class="sish-hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-7">
+            <span class="sish-hero-eyebrow"><i class="fas fa-tint"></i>&nbsp; Escuela de Geología · UIS</span>
+            <h1>Semillero de Investigación en <span>Sistemas Hidrológicos</span></h1>
+            <p class="lead">
+              Estudiamos, investigamos y divulgamos el conocimiento sobre los recursos hídricos subterráneos,
+              con un enfoque en su conservación y gestión sostenible.
+            </p>
+            <a href="/proyectos-extension/" class="btn btn-light btn-lg mr-2 mb-2">Ver proyectos <i class="fas fa-arrow-right ml-1"></i></a>
+            <a href="/webinarios/" class="btn btn-ghost btn-lg mb-2"><i class="fas fa-play-circle mr-1"></i> Webinarios</a>
+          </div>
+          <div class="col-md-5 sish-hero-art">
+            <img src="/assets/img/mascota-1.png" alt="Kairu, el caimán geólogo, mascota del SISH">
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  
-  <div class="col-md">
-    <div class="mt-4"></div>
-    <h3>Geotermia: Lecciones desde Francia para encender el potencial en Colombia</h3>
-    <p>
-      Aprende sobre la geotermia en Colombia y cómo aprovechar el calor del subsuelo de forma limpia y constante. 
-      Hablamos de geotermia superficial y profunda, cómo se extrae la energía, los riesgos y las oportunidades en volcanes, fallas y pozos petroleros inactivos. 
-      También compartimos buenas prácticas para cuidar el medio ambiente y aprovechar este recurso de manera eficiente.
-    </p>
-  </div>
-</div>
+      <svg class="sish-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,50 C240,90 480,10 720,40 C960,70 1200,20 1440,50 L1440,90 L0,90 Z"></path>
+      </svg>
+    </section>
 
+    <!-- LÍNEAS DE INVESTIGACIÓN -->
+    <section class="sish-section pb-2">
+      <div class="container">
+        <div class="sish-section-head">
+          <span class="sish-kicker">Lo que hacemos</span>
+          <h2>Líneas de investigación</h2>
+        </div>
+        <div class="row">
+          <div class="col-6 col-lg mb-4"><div class="sish-line-card"><div class="sish-icon"><i class="fas fa-water"></i></div><h3>Hidrogeología y modelación</h3></div></div>
+          <div class="col-6 col-lg mb-4"><div class="sish-line-card"><div class="sish-icon"><i class="fas fa-solar-panel"></i></div><h3>Energía y sostenibilidad</h3></div></div>
+          <div class="col-6 col-lg mb-4"><div class="sish-line-card"><div class="sish-icon"><i class="fas fa-balance-scale"></i></div><h3>Gestión y gobernanza del agua subterránea</h3></div></div>
+          <div class="col-6 col-lg mb-4"><div class="sish-line-card"><div class="sish-icon"><i class="fas fa-laptop-code"></i></div><h3>Tecnologías y herramientas digitales</h3></div></div>
+          <div class="col-12 col-lg mb-4"><div class="sish-line-card"><div class="sish-icon"><i class="fas fa-flask"></i></div><h3>Calidad y química del agua</h3></div></div>
+        </div>
+      </div>
+    </section>
 
-        <div class="mt-5"></div>
+    <!-- WEBINARIO DESTACADO -->
+    <section class="sish-section pt-4">
+      <div class="container">
+        <!-- Se carga el primer webinario de /data/webinarios.json -->
+        <div id="webinario-destacado"><div class="sish-loading"><span></span></div></div>
+      </div>
+    </section>
 
-            <section class="my-2">
-                <h1>Noticias destacadas</h1>
-                <div class="list-group list-group-flush">
-                
-                    <div class="list-group-item">
-                        <div class="row">
-                        <script src="/assets/js/platform.js" async></script>
-                        <div class="elfsight-app-8682624b-2ba9-4602-b8bc-2af92ae0ebcf" data-elfsight-app-lazy></div>
-                        </div>
-                    </div>
-                
-                </div>
-            </section>
-
-    </div>
+    <!-- NOTICIAS -->
+    <section class="sish-section pt-2">
+      <div class="container">
+        <div class="sish-section-head">
+          <span class="sish-kicker">Al día</span>
+          <h2>Noticias destacadas</h2>
+          <p>Lo más reciente de nuestro Instagram <a href="https://www.instagram.com/sish_uis/" target="_blank" rel="noopener">@sish_uis</a></p>
+        </div>
+        <!-- Las publicaciones salen de /data/noticias.json -->
+        <div id="noticias-instagram" class="sish-ig-grid"><div class="sish-loading"><span></span></div></div>
+        <div class="text-center mt-4">
+          <a href="https://www.instagram.com/sish_uis/" target="_blank" rel="noopener" class="btn btn-outline-primary"><i class="fab fa-instagram mr-1"></i> Ver más en Instagram</a>
+        </div>
+      </div>
+    </section>
 
     <div id="footer-placeholder"></div>
 
 <!-- jQuery (CDN oficial) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <!-- jQuery UI -->
 <script src="/assets/jquery-ui-1.13.1/jquery-ui.min.js"></script>
-
 <!-- Popper.js (necesario para los dropdowns de Bootstrap 4) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 <!-- Moment.js -->
 <script src="/assets/js/moment-2.23.0.min.js"></script>
-
-<!-- Script principal -->
-<script src="/assets/js/script.js"></script>
-
-<!-- Autocomplete (CDN) -->
-<script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
-
 <!-- Accesibilidad -->
 <script src="/assets/js/accessibility-buttons.js"></script>
-
-<!-- Portal principal -->
+<!-- Portal principal (carga header y footer) -->
 <script src="/assets/js/sishportal.js"></script>
-
-<!-- Inicialización de dropdowns -->
-<script>
-  $(function () {
-    $('.dropdown-toggle').dropdown();
-  });
-</script>
-
-</body>
-</html>
-
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>Inicio - Semillero de Investigación de Sistemas Hidrológicos</title>
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.ico">
-
-    <!-- Fuentes -->
-    <link rel="stylesheet" href="assets/css/fonts.googleapis.com-WorkSans.css">
-    <link rel="stylesheet" href="assets/css/fonts.googleapis.com-Montserrat.css">
-
-    <!-- Estilos base del portal -->
-    <link rel="stylesheet" href="assets/css/sishportal.css">
-    <link rel="stylesheet" href="assets/css/accessibility-buttons.css">
-
-    <!-- jQuery UI -->
-    <link rel="stylesheet" href="assets/jquery-ui-1.13.1/jquery-ui.min.css">
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="assets/fontawesome-free-5.15.4-web/css/all.min.css">
-
-    <!-- Estilos adicionales de ANH -->
-    <link rel="stylesheet" href="assets/css/agenti.styleColors.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/agenti.style.css" type="text/css">
-</head>
-
-
-<body>
-    <!-- Header -->
-    <nav class="d-none d-sm-block" aria-label="Barra de navegación de menú">
-                <div class="container">
-                        <div class="row my-2">
-                            <div class="col">
-                                <a href="/">
-                                    <img class="sish-logo" src="assets/img/uis77.png" alt="UIS">
-                                </a>
-                            </div>
-                            <div class="col-md-auto">
-                                <a href="/">
-                                    <img class="sish-logo" src="assets/img/sish-horizontal.png" alt="SISH">
-                                </a>
-                            </div>
-                        </div>
-                </div>
-    </nav>
-    <div class="overall">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="menuPrincipal">
-        <div class="container">
-            <!-- Botón responsive -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Menú -->
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav mx-auto">
-
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="#">Inicio</a>
-                    </li>
-
-                    <li class="nav-item dropdown px-3">
-                        <a class="nav-link dropdown-toggle" href="#" id="nosotrosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Nosotros
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="nosotrosDropdown">
-                            <li><a class="dropdown-item" href="mision-y-vision.html">Misión y Visión</a></li>
-                            <li><a class="dropdown-item" href="miembros.html">Miembros</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="proyectos.html">Proyectos</a>
-                    </li>
-
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="eventos.html">Eventos</a>
-                    </li>
-
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="publicaciones.html">Publicaciones</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-    </div>
-
-
-
-
-<div class="blue-bar"></div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="info">
-            <div class="container">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-xs-12 col-md-8">
-                                <h3>Semillero de Investigación de Sistemas Hidrológicos</h3>
-                            </div>
-                            <div class="col-xs-12 col-md-4 mt-2 mb-2">
-                                <img class="logo" src="assets/img/sish-horizontal.png" alt="Semillero Hidrosistemas" style="max-height:90px;">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-md-8">
-                                <div class="text-sede py-3">
-                                    <h2>Contacto</h2>
-                                    <p>Dirección: Universidad Industrial de Santander, Carrera 27 Calle 9, Bucaramanga, Santander</p>
-                                    <p>Teléfono: +57 (607) 634 400</p>
-                                    <p>Correo: <a href="mailto:semillerohidrosistemas@gmail.com">semillerohidrosistemas@gmail.com</a></p>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-4">
-                                <div class="social-media-container mb-3">
-                                    <a href="https://www.instagram.com/sish_uis/" target="_blank" rel="nofollow noopener">
-                                        <em class="fab fa-instagram"></em>
-                                    </a>&nbsp;
-                                    <a href="https://www.linkedin.com/in/sish-uis/" target="_blank" rel="nofollow noopener">
-                                        <em class="fab fa-linkedin"></em>
-                                    </a>&nbsp;
-                                    <a href="https://www.youtube.com/@SemilleroHidrosistemas" target="_blank" rel="nofollow noopener">
-                                        <em class="fab fa-youtube"></em>
-                                    </a>
-                                </div>
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.8746777029937!2d-73.12503822500152!3d7.14048769286363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e68156d60c33ca7%3A0x10abddc71528bb54!2sEdificio%20Jorge%20Bautista%20Vesga%20(JBV)!5e0!3m2!1ses-419!2sco!4v1757784486614!5m2!1ses-419!2sco"
-                                    width="100%" height="200" style="border:0; border-radius:8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                        </div>
-                        <div>
-                            <p style="margin-top:5px;">©Copyright 2025 - Todos los derechos reservados SISH</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-
-
-<!-- jQuery (primero siempre) -->
-<script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-
-<!-- jQuery UI (si lo necesitas) -->
-<script src="assets/jquery-ui-1.13.1/jquery-ui.min.js"></script>
-
-<!-- Popper.js (necesario para dropdowns y tooltips) -->
-<script src="assets/js/popper-1.14.7.min.js"></script>
-
-<!-- Bootstrap JS -->
-<script src="assets/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-
-<!-- Moment.js -->
-<script src="assets/js/moment-2.23.0.min.js"></script>
-
-<!-- Tu script principal -->
-<script src="assets/js/script.js"></script>
-
-<!-- Otros plugins que uses -->
-<script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
-<script src="assets/js/accessibility-buttons.js"></script>
-<script src="assets/js/sishportal.js"></script>
+<!-- Detalles modernos -->
+<script src="/assets/js/sish-data.js"></script>
+<script src="/assets/js/sish-modern.js"></script>
 
 </body>
 </html>
