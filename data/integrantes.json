@@ -27,12 +27,12 @@
     },
     {
       "titulo": "Estudiantes",
-      "subtitulo": "Equipo de pregrado de la Escuela de Geología",
+      "subtitulo": "Equipo de pregrado de la Facultad de Ingenierías Fisicoquímicas",
       "miembros": [
         {
           "nombre": "María Juliana Chacón Porras",
           "cargo": "Líder",
-          "foto": "/assets/img/miembros/Juliana-Chacon-2026.jpg",
+          "foto": "/assets/img/miembros/Juliana-Chacon.jpg",
           "descripcion": "Estudiante de geología de octavo semestre con intereses en la geofísica, la hidrogeología, la geología ambiental y la geología estructural. Cuenta con habilidades en programación usando Python (nivel intermedio), aplicadas a la teledetección, el modelamiento numérico, el análisis de datos y la estadística multivariable.\n\nComo líder del SISH, coordina la ejecución diaria de las actividades, modera las reuniones del equipo y garantiza el cumplimiento de los objetivos institucionales. Se encarga de articular el trabajo entre los miembros, promoviendo un ambiente de colaboración y aprendizaje constante. Se caracteriza por su liderazgo, organización y compromiso con la gestión colectiva del conocimiento, impulsando iniciativas que fortalecen el enfoque hidrogeológico y la divulgación científica.\n\nSe ha desempeñado como tutora de Geología Estructural durante 2026.",
           "email": "maria2230597@correo.uis.edu.co",
           "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002277361",
@@ -122,7 +122,7 @@
         {
           "nombre": "Danna Valentina Sánchez Rincón",
           "cargo": "Fotografía y video",
-          "foto": "",
+          "foto": "/assets/img/miembros/Danna-Sanchez.jpg",
           "descripcion": "",
           "email": "danna2190644@correo.uis.edu.co",
           "cvlac": "",
@@ -158,7 +158,7 @@
         {
           "nombre": "Edwin Andrés Bonilla Quijano",
           "cargo": "Vocal",
-          "foto": "",
+          "foto": "/assets/img/miembros/Edwin-Bonilla.jpeg",
           "descripcion": "",
           "email": "edwin2212477@correo.uis.edu.co",
           "cvlac": "",
@@ -190,7 +190,7 @@
         },
         {
           "nombre": "Oscar Esteban Fonseca Pérez",
-          "cargo": "Próximo a graduarse",
+          "cargo": "Profesional",
           "foto": "/assets/img/miembros/Esteban-Fonseca.png",
           "descripcion": "",
           "email": "oscar2212468@correo.uis.edu.co",
