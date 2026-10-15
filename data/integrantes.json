@@ -51,7 +51,7 @@
           "nombre": "Manuel González Rodríguez",
           "cargo": "Secretario",
           "foto": "/assets/img/miembros/Manuel-Gonzalez.png",
-          "descripcion": "",
+          "descripcion": "Estudiante de geología de sexto semestre con intereses en Geofísica, Hidrogeología, Geología Planetaria, Geología Estructural, Paleontología, programación y Machine Learning.",
           "email": "manuel2230590@correo.uis.edu.co",
           "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002418997",
           "linkedin": "https://www.linkedin.com/in/manuel-gonzalez-552396273"
@@ -87,7 +87,7 @@
           "nombre": "Caleb Santiago Rivera Castellanos",
           "cargo": "Marketing",
           "foto": "/assets/img/miembros/Caleb-Rivera.jpeg",
-          "descripcion": "",
+          "descripcion": "Estudiante de sexto semestre de Ingeniería de Petróleos con intereses en Hidrogeología, Geotermia, lodos de perforación y análisis petrofísicos.",
           "email": "caleb2232219@correo.uis.edu.co",
           "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002127197",
           "linkedin": "https://www.linkedin.com/in/caleb-santiago-rivera-castellanos-9ab0423b1"
@@ -95,7 +95,7 @@
         {
           "nombre": "Kesly Sofía Serrano Monsalve",
           "cargo": "Contenido y narrativa",
-          "foto": "/assets/img/miembros/Kesly_Serrano-jpg",
+          "foto": "/assets/img/miembros/Kesly-Serrano.jpg",
           "descripcion": "",
           "email": "kesly2231109@correo.uis.edu.co",
           "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002453942",
@@ -114,7 +114,7 @@
           "nombre": "Alan Nicolas Guzman Cudris",
           "cargo": "Coordinador de proyectos especiales 3",
           "foto": "/assets/img/miembros/Alan-Guzman.JPG",
-          "descripcion": "",
+          "descripcion": "Estudiante de geología de octavo semestre con intereses en Hidrogeología, Yacimientos Minerales, Petrología Metamórfica, Geoquímica, Geología Estructural y Sistemas de Información Geográfica (SIG).",
           "email": "alan2220903@correo.uis.edu.co",
           "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002453777",
           "linkedin": "https://www.linkedin.com/in/aguzcu"
@@ -123,7 +123,7 @@
           "nombre": "Danna Valentina Sánchez Rincón",
           "cargo": "Fotografía y video",
           "foto": "/assets/img/miembros/Danna-Sanchez.jpg",
-          "descripcion": "",
+          "descripcion": "Estudiante de geología de noveno semestre con intereses en Hidrogeología, Sedimentología, Geoquímica y Teledetección.",
           "email": "danna2190644@correo.uis.edu.co",
           "cvlac": "",
           "linkedin": ""
@@ -159,7 +159,7 @@
           "nombre": "Edwin Andrés Bonilla Quijano",
           "cargo": "Vocal",
           "foto": "/assets/img/miembros/Edwin-Bonilla.jpeg",
-          "descripcion": "",
+          "descripcion": "Estudiante de geología de noveno semestre con intereses en Hidrogeología, Geofísica, Geoquímica y Yacimientos Minerales.",
           "email": "edwin2212477@correo.uis.edu.co",
           "cvlac": "",
           "linkedin": ""
