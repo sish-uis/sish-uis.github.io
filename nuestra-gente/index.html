@@ -1,0 +1,115 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Nuestra Gente - Semillero de Investigación de Sistemas Hidrológicos</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
+
+    <!-- Fuentes -->
+    <link rel="stylesheet" href="/assets/css/fonts.googleapis.com-WorkSans.css">
+    <link rel="stylesheet" href="/assets/css/fonts.googleapis.com-Montserrat.css">
+
+    <!-- Estilos base del portal -->
+    <link rel="stylesheet" href="/assets/css/sishportal.css">
+    <link rel="stylesheet" href="/assets/css/accessibility-buttons.css">
+
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="/assets/jquery-ui-1.13.1/jquery-ui.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/assets/fontawesome-free-5.15.4-web/css/all.min.css">
+
+    <!-- Estilos adicionales de ANH -->
+    <link rel="stylesheet" href="/assets/css/agenti.styleColors.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/agenti.style.css" type="text/css">
+    <!-- Estilo moderno SISH (va de último para mandar sobre lo anterior) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap">
+    <link rel="stylesheet" href="/assets/css/sish-modern.css">
+</head>
+
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="sish-page-hero" style="--bg:url('/proyectos-extension/img/bucaramanga4.jpg')">
+      <div class="container">
+        <nav class="sish-crumbs" aria-label="Ruta"><a href="/">Inicio</a><i class="fas fa-chevron-right"></i><span>Conócenos</span><i class="fas fa-chevron-right"></i><span>Nuestra gente</span></nav>
+        <h1>Nuestra gente</h1>
+        <p>Docentes, estudiantes y aliados que hacen posible el SISH, semestre a semestre.</p>
+      </div>
+    </section>
+
+
+<section class="sish-section sish-team">
+      <div class="container">
+        <div class="sish-team-intro">
+          <div>
+            <span class="sish-kicker">Conócenos</span>
+            <h2>Nuestro equipo</h2>
+            <p>Docentes y estudiantes de la Escuela de Geología que investigan, enseñan y divulgan el conocimiento sobre el agua subterránea. Cambia de periodo para ver quiénes han hecho parte del semillero en cada semestre.</p>
+          </div>
+          <div class="sish-team-stats" id="equipo-stats"></div>
+        </div>
+
+        <div class="sish-period-bar">
+          <span class="sish-period-label"><i class="far fa-calendar-alt"></i> Periodo</span>
+          <div class="sish-period-tabs" id="equipo-periodos" role="tablist" aria-label="Periodo académico"></div>
+        </div>
+
+        <!-- El equipo actual sale de /data/integrantes.json y los periodos anteriores de /data/historial-equipo.json -->
+        <div id="equipo"><div class="sish-loading"><span></span></div></div>
+
+        <nav class="sish-subnav-foot" aria-label="Conócenos">
+          <a href="/quienes-somos/"><span>Conócenos</span><strong>¿Quiénes somos?</strong><i class="fas fa-arrow-right"></i></a>
+          <a href="/filosofia-institucional/"><span>Conócenos</span><strong>Filosofía institucional</strong><i class="fas fa-arrow-right"></i></a>
+        </nav>
+      </div>
+    </section>
+
+
+    <div id="footer-placeholder"></div>
+
+<!-- jQuery (CDN oficial) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- jQuery UI -->
+<script src="/assets/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+
+<!-- Popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- Moment.js -->
+<script src="/assets/js/moment-2.23.0.min.js"></script>
+
+<!-- Script principal -->
+<script src="/assets/js/script.js"></script>
+
+<!-- Autocomplete (CDN) -->
+<script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+
+<!-- Accesibilidad -->
+<script src="/assets/js/accessibility-buttons.js"></script>
+
+<!-- Portal principal -->
+<script src="/assets/js/sishportal.js"></script>
+<script>
+  $(function () {
+    $('.dropdown-toggle').dropdown();
+  });
+</script>
+<script src="/assets/js/sish-data.js"></script>
+<script src="/assets/js/sish-modern.js"></script>
+</body>
+</html>

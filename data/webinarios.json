@@ -1,0 +1,78 @@
+{
+  "_instrucciones": "El primero de la lista es el que sale destacado en la portada. 'id' es el código del video de YouTube (lo que va después de watch?v= o de youtu.be/).",
+  "intro": "Espacio de divulgación científica y formación académica donde se comparten experiencias, proyectos y avances en geociencias e hidrogeología, promoviendo el intercambio de conocimiento entre estudiantes, docentes y profesionales del área.",
+  "webinarios": [
+    {
+      "titulo": "ACH por las Regiones: Santander",
+      "videos": [
+        {
+          "id": "LmehMeA1slY",
+          "titulo": "Revive la sesión de la mañana"
+        },
+        {
+          "id": "MUaXSD-ddLM",
+          "titulo": "Revive la sesión de la tarde"
+        }
+      ],
+      "descripcion": [
+        "Revive cada momento del Primer Encuentro Regional de Hidrogeología en Santander, un espacio donde Bucaramanga se convirtió en el eje de la gestión hídrica nacional. Organizado por la Asociación Colombiana de Hidrogeólogos (ACH) y la Escuela de Geología de la UIS, este evento técnico-académico lidera la conversación sobre el aprovechamiento sostenible y la protección de nuestras aguas subterráneas.",
+        "Durante la jornada, expertos y autoridades ambientales compartieron conocimientos sobre la seguridad hídrica y los retos climáticos del territorio. Explora las ponencias y debates que buscan integrar la ciencia con la toma de decisiones institucionales para asegurar el futuro del recurso hídrico en el país.",
+        "Este contenido audiovisual, capturado por el Semillero de Investigación en Sistemas Hidrológicos (SISH), funciona como la memoria técnica oficial de las mesas de trabajo y el panel de expertos de la estrategia regional 2026-2027."
+      ],
+      "expositores": ""
+    },
+    {
+      "titulo": "Acuíferos: Identificación y Delimitación de Zonas de Recarga",
+      "videos": [
+        {
+          "id": "gWtQTDp0Fpo",
+          "titulo": ""
+        }
+      ],
+      "descripcion": [
+        "Sumérgete en el análisis técnico de los sistemas hidrogeológicos. En esta sesión de <b>\"Hablemos de todo en Geología\"</b>, expertos del Servicio Geológico Colombiano (SGC) detallan las metodologías para identificar y proteger las zonas donde el agua se infiltra y da vida a nuestros acuíferos.",
+        "Explora herramientas clave para la gestión del recurso hídrico subterráneo, desde la caracterización geológica hasta la delimitación espacial, una charla esencial para entender la seguridad hídrica en nuestro territorio."
+      ],
+      "expositores": "Emmanuel Ocampo Guzmán y Fabio Ernesto Viana (SGC)."
+    },
+    {
+      "titulo": "Geotermia: Lecciones desde Francia para encender el potencial en Colombia",
+      "videos": [
+        {
+          "id": "6C4ajkUXtuw",
+          "titulo": ""
+        }
+      ],
+      "descripcion": [
+        "Aprende sobre la geotermia en Colombia y cómo aprovechar el calor del subsuelo de forma limpia y constante. Hablamos de geotermia superficial y profunda, cómo se extrae la energía, los riesgos y las oportunidades en volcanes, fallas y pozos petroleros inactivos. También compartimos buenas prácticas para cuidar el medio ambiente y aprovechar este recurso de manera eficiente."
+      ],
+      "expositores": ""
+    },
+    {
+      "titulo": "Introducción al Modelamiento en Hidrogeología",
+      "videos": [
+        {
+          "id": "ouyEQi-Te_k",
+          "titulo": ""
+        }
+      ],
+      "descripcion": [
+        "En este webinario se abordan los fundamentos del modelamiento hidrogeológico, explicando los principios del flujo subterráneo, los tipos de modelos y las herramientas más utilizadas, como <i>MODFLOW</i> y <i>Feflow</i>. Ideal para quienes desean iniciarse en la simulación de acuíferos y en el análisis del comportamiento del agua subterránea."
+      ],
+      "expositores": ""
+    },
+    {
+      "titulo": "Charla: Principios de Hidrogeología",
+      "videos": [
+        {
+          "id": "MMAz0faRXLU",
+          "titulo": ""
+        }
+      ],
+      "descripcion": [
+        "En esta charla se abordan los fundamentos esenciales de la hidrogeología, desde el ciclo del agua y su relación con la geología, hasta los conceptos de acuíferos, porosidad, permeabilidad y flujo subterráneo. También se discuten las diferencias entre acuíferos libres y confinados, la ley de Darcy y la importancia del estudio integral del recurso hídrico. Una presentación ideal para comprender la base científica del agua subterránea y su papel en la gestión ambiental."
+      ],
+      "expositores": ""
+    }
+  ]
+}

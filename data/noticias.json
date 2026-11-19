@@ -1,0 +1,9 @@
+{
+  "_instrucciones": "AUTOMÁTICO: pega en 'feedAutomatico' la URL del feed JSON de Behold (https://feeds.behold.so/...). Con eso las 3 últimas publicaciones salen solas. Si queda vacío o el feed falla, se usan los enlaces de 'instagram' de abajo.",
+  "feedAutomatico": "",
+  "instagram": [
+    "https://www.instagram.com/p/DfV76q3P4Y2/",
+    "https://www.instagram.com/reel/DfDH5qqtIx2/",
+    "https://www.instagram.com/p/DezuimHByLS/"
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "_instrucciones": "Integrantes de periodos anteriores. El periodo actual sale de integrantes.json. Al cerrar un semestre, copia aquí los grupos de integrantes.json como un periodo nuevo (arriba del todo) con su 'id' (p. ej. 2026-2).",
+  "actual": "2026-2",
+  "periodos": [
+    {
+      "id": "2026-1",
+      "titulo": "2026-1",
+      "fuente": "Página del semillero, marzo de 2026",
+      "grupos": [
+        {
+          "titulo": "Dirección",
+          "miembros": [
+            {
+              "nombre": "Juan Diego Colegial Gutiérrez",
+              "cargo": "Director",
+              "foto": "/assets/img/miembros/Juan-Diego-Colegial-Gutierrez.png"
+            },
+            {
+              "nombre": "Mayra Isabel Vargas Cáceres",
+              "cargo": "Docente orientadora",
+              "foto": ""
+            }
+          ]
+        },
+        {
+          "titulo": "Estudiantes",
+          "miembros": [
+            {
+              "nombre": "María Juliana Chacón Porras",
+              "cargo": "Estudiante líder",
+              "foto": "/assets/img/miembros/Juliana-Chacon.jpg"
+            },
+            {
+              "nombre": "David Blanco Quiroga",
+              "cargo": "Coordinador",
+              "foto": "/assets/img/miembros/David-Blanco.png"
+            },
+            {
+              "nombre": "Sair Granada Garzón",
+              "cargo": "Estudiante Sublider",
+              "foto": "/assets/img/miembros/Sair-Granada.jpg"
+            },
+            {
+              "nombre": "Manuel González Rodríguez",
+              "cargo": "Secretario y Coordinador de Proyectos Especiales 1",
+              "foto": "/assets/img/miembros/Manuel-Gonzalez.png"
+            },
+            {
+              "nombre": "Oscar Esteban Fonseca Pérez",
+              "cargo": "Tesorero",
+              "foto": "/assets/img/miembros/Esteban-Fonseca.png"
+            },
+            {
+              "nombre": "Silvia Vargas Cano",
+              "cargo": "Diseñadora y Creativa Gráfica",
+              "foto": "/assets/img/miembros/Silvia-Vargas.jpg"
+            },
+            {
+              "nombre": "Andrés Felipe Durán Lascarro",
+              "cargo": "Coordinador de Proyectos Especiales 2",
+              "foto": "/assets/img/miembros/Andres-Duran.jpg"
+            },
+            {
+              "nombre": "María Paula Roa Archila",
+              "cargo": "Jefa de Contenido y Narrativa",
+              "foto": "/assets/img/miembros/Maria-Paula-Roa-Archila.jpeg"
+            },
+            {
+              "nombre": "Thomás Quiñonez",
+              "cargo": "Gestor de Fondos Externos y Enlace Interinstitucional",
+              "foto": "/assets/img/miembros/Thomas-Quinonez.jpg"
+            },
+            {
+              "nombre": "Angie Katherine González Calderon",
+              "cargo": "Gestora de Medios Digitales (Community Manager)",
+              "foto": "/assets/img/miembros/Angie-Gonzalez.JPG"
+            },
+            {
+              "nombre": "Kesly Sofía Serrano Monsalve",
+              "cargo": "Vocal",
+              "foto": "/assets/img/miembros/Kesly_Serrano.jpg"
+            },
+            {
+              "nombre": "Alan Nicolas Guzman Cudris",
+              "cargo": "Vocal",
+              "foto": "/assets/img/miembros/Alan-Guzman.JPG"
+            },
+            {
+              "nombre": "Laura Marcela Céspedes Gómez",
+              "cargo": "Vocal",
+              "foto": "/assets/img/miembros/Laura-Cespedes.jpeg"
+            },
+            {
+              "nombre": "Caleb Santiago Rivera Castellanos",
+              "cargo": "Vocal",
+              "foto": "/assets/img/miembros/Caleb-Rivera.jpeg"
+            },
+            {
+              "nombre": "Ana Maria Calderón Guzmán",
+              "cargo": "Vocal",
+              "foto": "/assets/img/miembros/Ana-Calderon.jpeg"
+            },
+            {
+              "nombre": "Maria Fernanda Ariza Sandoval",
+              "cargo": "Vocal",
+              "foto": "/assets/img/miembros/Fernanda-Ariza.jpg"
+            }
+          ]
+        },
+        {
+          "titulo": "Acompañamiento externo",
+          "miembros": [
+            {
+              "nombre": "Luisa Casadiegos Agudelo",
+              "cargo": "",
+              "foto": "/assets/img/miembros/Luisa-Casadiegos-Agudelo.png"
+            },
+            {
+              "nombre": "Johan Páez Romero",
+              "cargo": "",
+              "foto": "/assets/img/miembros/Johan-Paez.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2025-2",
+      "titulo": "2025-2",
+      "fuente": "Página del semillero, octubre de 2025",
+      "grupos": [
+        {
+          "titulo": "Dirección",
+          "miembros": [
+            {
+              "nombre": "Juan Diego Colegial Gutiérrez",
+              "cargo": "Director",
+              "foto": "/assets/img/miembros/Juan-Diego-Colegial-Gutierrez.png"
+            },
+            {
+              "nombre": "Luisa Casadiegos Agudelo",
+              "cargo": "Docente orientadora",
+              "foto": "/assets/img/miembros/Luisa-Casadiegos-Agudelo.png"
+            }
+          ]
+        },
+        {
+          "titulo": "Estudiantes",
+          "miembros": [
+            {
+              "nombre": "David Blanco Quiroga",
+              "cargo": "Líder / Presidente",
+              "foto": "/assets/img/miembros/David-Blanco.png"
+            },
+            {
+              "nombre": "Johan Páez Romero",
+              "cargo": "Vicepresidente",
+              "foto": "/assets/img/miembros/Johan-Paez.jpg"
+            },
+            {
+              "nombre": "María Juliana Chacón Porras",
+              "cargo": "Secretaria",
+              "foto": "/assets/img/miembros/Juliana-Chacon.jpg"
+            },
+            {
+              "nombre": "Oscar Esteban Fonseca",
+              "cargo": "Tesorero",
+              "foto": "/assets/img/miembros/Esteban-Fonseca.png"
+            },
+            {
+              "nombre": "Manuel Gonzalez",
+              "cargo": "Coordinador de Proyectos Especiales N.º 1",
+              "foto": "/assets/img/miembros/Manuel-Gonzalez.png"
+            },
+            {
+              "nombre": "Andrés Felipe Durán Lascarro",
+              "cargo": "Coordinador de Proyectos Especiales N.º 2",
+              "foto": "/assets/img/miembros/Andres-Duran.jpg"
+            },
+            {
+              "nombre": "Thomás Quiñonez",
+              "cargo": "Gestor de Fondos Externos y Enlace Interinstitucional",
+              "foto": "/assets/img/miembros/Thomas-Quinonez.jpg"
+            },
+            {
+              "nombre": "María Paula Roa Archila",
+              "cargo": "Jefa de Contenido y Narrativa",
+              "foto": "/assets/img/miembros/Maria-Paula-Roa-Archila.jpeg"
+            },
+            {
+              "nombre": "Angie Gonzalez",
+              "cargo": "Gestora de Medios Digitales (Community Manager)",
+              "foto": "/assets/img/miembros/Angie-Gonzalez.JPG"
+            },
+            {
+              "nombre": "Silvia Vargas Cano",
+              "cargo": "Diseñadora y Creativa Gráfica",
+              "foto": "/assets/img/miembros/Silvia-Vargas.jpg"
+            },
+            {
+              "nombre": "Sair Granada Garzón",
+              "cargo": "Desarrollador Web (Webmaster)",
+              "foto": "/assets/img/miembros/Sair-Granada.jpg"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

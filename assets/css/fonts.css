@@ -1,0 +1,39 @@
+/* fonts.css */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v24/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu170w-.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/worksans/v17/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K0nXBi8Jow.ttf) format('truetype');
+}
+
+html {
+  font-family: 'Work Sans', sans-serif !important;
+  font-size: 14px;
+  color: #4b4b4b;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif !important;
+  color: #004884 !important;
+  margin: 0;
+}
+
+h1 { font-size: 1.5rem !important; }
+h2 { font-size: 1.5rem !important; }
+h3 { font-size: 1.5rem !important; }
+h4 { font-size: 1.25rem !important; }
+h5 { font-size: 1.125rem !important; }
+h6 { font-size: 1rem !important; }
+
+.text-banner {
+  font-size: 1rem !important;
+  font-weight: 300;
+}

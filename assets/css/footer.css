@@ -1,0 +1,26 @@
+/* footer.css */
+footer .logo { max-height: 70px; }
+footer .footer-icon-width { height: 100%; width: 100%; }
+footer .social-media-container a {
+  color: #3366CC !important;
+  font-size: 1.7rem;
+  inline-size: auto;
+  margin: 0px;
+}
+
+footer p { margin: 0; }
+footer h2 { margin-bottom: 1rem; font-size: 1.25rem !important; }
+
+footer .closing {
+  background-color: #3366CC;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+footer .closing .co-logo { max-height: 60px; }
+footer .closing .govco-logo { max-height: 38px; }
+
+footer .info { margin-top: 6rem; background-color: #008E65; }
+footer .info .card { top: -5rem; padding: 1.5rem; height: auto !important; }
+
+.green-bar { background-color: #008E65; height: .3rem; box-shadow: 0px 5px 10px gray; }

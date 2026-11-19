@@ -1,0 +1,163 @@
+html {
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+input,
+textarea,
+select,
+button {
+  -webkit-transition: all 0.6s linear;
+  transition: all 0.6s linear;
+}
+
+.container_font input,
+.container_font textarea,
+.container_font select,
+.container_font button {
+  font-size: 1.042rem ;
+}
+
+.btn_contraste {
+  background-image: url("../images/contraste_white.56e612c84752.png");
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: 27px, 27px;
+  background-color: #3366CC !important;
+}
+.btn_aumentar{
+  background-image: url("../images/aumenta_white.0267757b41c3.png");
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: 27px, 27px;
+  background-color: #3366CC !important;
+}
+.btn_restablecer{
+  background-image: url("../images/restablecer_white.8486bcb0d889.png");
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: 27px, 27px;
+  background-color: #3366CC !important;
+}
+.btn_disminuir{
+  background-image: url("../images/disminuir_white.e3692bbd8a68.png");
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: 27px, 27px;
+  background-color: #3366CC !important;
+}
+.accesibilidad-contraste {
+  background: black;
+}
+
+.accesibilidad-contraste {
+  background: white;
+}
+
+.accesibilidad-contraste .item .btn {
+  background-color:#000;
+}
+
+.accesibilidad-contraste input,
+.accesibilidad-contraste textarea,
+.accesibilidad-contraste keygen,
+.accesibilidad-contraste select,
+.accesibilidad-contraste button {
+color: #FFF !important;
+background-color: #000;
+}
+.accesibilidad-contraste, .accesibilidad-contraste h1, .accesibilidad-contraste h2, .accesibilidad-contraste h3, .accesibilidad-contraste h4, .accesibilidad-contraste a,
+.accesibilidad-contraste p, .accesibilidad-contraste input, .accesibilidad-contraste li, .accesibilidad-contraste textarea, 
+.accesibilidad-contraste div:not(.titulo-sish):not(#banner):not(#banner-pages):not(.activeZone),
+.accesibilidad-contraste select .accesibilidad-contraste button, .accesibilidad-contraste aside, .accesibilidad-contraste footer, .accesibilidad-contraste small
+.accesibilidad-contraste a, .accesibilidad-contraste p, .accesibilidad-contraste span, .accesibilidad-contraste strong, .accesibilidad-contraste nav , .accesibilidad-contraste h5.card-title, 
+.accesibilidad-contraste .social-media-container a{
+color: #FFF !important;
+background-color: #000 !important; 
+}
+
+.accesibilidad-contraste .nav-link:hover{
+  color: yellow !important;
+}
+
+.navbar-govco .nav-link{
+  color: #FFF!important;
+}
+
+.accesibilidad-contraste a:hover {
+  color: yellow !important;
+}
+
+.accesibilidad-contraste a.ml-2.small {
+  color: yellow !important;
+}
+
+.accesibilidad-contraste .navbar-light .navbar-nav .nav-link:hover {
+  color: yellow !important;
+}
+
+.titulo-sish,  .titulo-sish h3{
+  background-color: transparent !important;
+}
+
+.accesibilidad-contraste img:not(.sish-logo){
+    filter: grayscale(1);
+} 
+
+.accesibilidad-contraste img.sish-logo{
+  filter: contrast(0%);
+}
+.accesibilidad-contraste img.footer-icon-width{
+  filter: contrast(0%);
+}
+.accesibilidad-contraste .btn_contraste{
+  filter: grayscale(1);
+}
+
+.accesibilidad-contraste div.card-header {
+  filter: contrast(70%);
+}
+
+.accesibilidad-contraste li.breadcrumb-item.active { 
+  color: yellow !important;
+}
+
+.accesibilidad-contraste .card {
+  border-color: #FFF;
+}
+

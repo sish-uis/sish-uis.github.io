@@ -1,0 +1,7 @@
+Aquí van las fotos descargadas del Instagram del SISH (.webp).
+Los nombres deben quedar exactamente así:
+semana-tecnica-01.webp ... semana-tecnica-12.webp
+audiencia-los-santos-01.webp ... audiencia-los-santos-12.webp
+redcolsi-01.webp ... redcolsi-05.webp
+flyer-formacion-acuiferos.webp, flyer-mojabilidad.webp, flyer-curso-mix.webp,
+flyer-nexus.webp, flyer-paipa.webp, flyer-semana-tecnica.webp, flyer-seg-conferencia.webp
